@@ -1,0 +1,16 @@
+{
+  "customize": {
+    "extra_dir": "", 
+    "version": "2.5", 
+    "version_int": 20500
+  }, 
+  "process_script": "process", 
+  "soft_uoa": "24fc0bdc87f0f2f9", 
+  "suggested_path": "ccc", 
+  "tags": [
+    "autotuning", 
+    "ccc", 
+    "v2.5", 
+    "v2"
+  ]
+}
