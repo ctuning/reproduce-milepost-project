@@ -1,0 +1,23 @@
+{
+  "customize": {
+    "extra_dir": "", 
+    "version": "0.17.0", 
+    "version_int": 1700
+  }, 
+  "deps": {
+    "lib_gmp": {
+      "local": "yes", 
+      "tags": "lib,gmp"
+    }
+  }, 
+  "process_script": "process", 
+  "soft_uoa": "7dadf96440b48611", 
+  "suggested_path": "cloog", 
+  "tags": [
+    "lib", 
+    "cloog", 
+    "v0.17.0", 
+    "v0.17", 
+    "v0"
+  ]
+}

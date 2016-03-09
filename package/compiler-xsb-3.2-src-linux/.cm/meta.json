@@ -1,0 +1,16 @@
+{
+  "customize": {
+    "extra_dir": "", 
+    "version": "3.2", 
+    "version_int": 30200
+  }, 
+  "process_script": "process", 
+  "soft_uoa": "5ad48e9a7faa2dec", 
+  "suggested_path": "xsb", 
+  "tags": [
+    "compiler", 
+    "xsb", 
+    "v3.2", 
+    "v3"
+  ]
+}

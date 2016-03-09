@@ -1,0 +1,17 @@
+{
+  "customize": {
+    "extra_dir": "", 
+    "version": "5.0.2", 
+    "version_int": 50002
+  }, 
+  "process_script": "process", 
+  "soft_uoa": "ed501fa9004a6cb6", 
+  "suggested_path": "gmp", 
+  "tags": [
+    "lib", 
+    "gmp", 
+    "v5.0.2", 
+    "v5.0", 
+    "v5"
+  ]
+}

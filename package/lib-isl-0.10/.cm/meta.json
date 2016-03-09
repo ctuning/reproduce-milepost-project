@@ -1,0 +1,22 @@
+{
+  "customize": {
+    "extra_dir": "", 
+    "version": "0.10", 
+    "version_int": 1000
+  }, 
+  "deps": {
+    "lib_gmp": {
+      "local": "yes", 
+      "tags": "lib,gmp"
+    }
+  }, 
+  "process_script": "process", 
+  "soft_uoa": "82dd13ca47c64729", 
+  "suggested_path": "isl", 
+  "tags": [
+    "lib", 
+    "isl", 
+    "v0.10", 
+    "v0"
+  ]
+}
