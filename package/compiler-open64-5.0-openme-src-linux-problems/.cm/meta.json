@@ -1,0 +1,16 @@
+{
+  "customize": {
+    "extra_dir": "", 
+    "version": "5.0", 
+    "version_int": 500
+  }, 
+  "process_script": "process", 
+  "soft_uoa": "3a8a82fa40bf992d", 
+  "suggested_path": "open64", 
+  "tags": [
+    "compiler", 
+    "open64", 
+    "v5.0", 
+    "v5"
+  ]
+}
