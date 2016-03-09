@@ -1,0 +1,28 @@
+{
+  "customize": {
+    "extra_dir": "", 
+    "version": "0.9", 
+    "version_int": 900
+  }, 
+  "deps": {
+    "lib_gmp": {
+      "local": "yes", 
+      "sort": 10, 
+      "tags": "lib,gmp"
+    }, 
+    "lib_mpfr": {
+      "local": "yes", 
+      "sort": 20, 
+      "tags": "lib,mpfr"
+    }
+  }, 
+  "process_script": "process", 
+  "soft_uoa": "067e4f40badd4223", 
+  "suggested_path": "mpc", 
+  "tags": [
+    "lib", 
+    "mpc", 
+    "v0.9", 
+    "v0"
+  ]
+}

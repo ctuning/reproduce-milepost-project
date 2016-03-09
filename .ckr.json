@@ -2,6 +2,11 @@
   "data_uid": "9482c22d7601b0df", 
   "data_name": "reproduce-milepost-project", 
   "dict": {
+    "repo_deps": [
+      {
+        "repo_uoa": "ck-autotuning"
+      } 
+    ], 
     "url": "https://github.com/ctuning/reproduce-milepost-project", 
     "shared": "git"
   }, 

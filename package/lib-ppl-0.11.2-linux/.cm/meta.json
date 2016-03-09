@@ -1,0 +1,34 @@
+{
+  "customize": {
+    "extra_dir": "", 
+    "version": "0.11.2", 
+    "version_int": 1102
+  }, 
+  "deps": {
+    "lib_gmp": {
+      "local": "yes", 
+      "sort": 10, 
+      "tags": "lib,gmp"
+    }, 
+    "lib_mpc": {
+      "local": "yes", 
+      "sort": 30, 
+      "tags": "lib,mpc"
+    }, 
+    "lib_mpfr": {
+      "local": "yes", 
+      "sort": 20, 
+      "tags": "lib,mpfr"
+    }
+  }, 
+  "process_script": "process", 
+  "soft_uoa": "b3065be3468aa97f", 
+  "suggested_path": "ppl", 
+  "tags": [
+    "lib", 
+    "ppl", 
+    "v0.11.2", 
+    "v0.11", 
+    "v0"
+  ]
+}
