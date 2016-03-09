@@ -31,19 +31,19 @@ mkdir $INSTALL_OBJ_DIR
 echo ""
 echo "Configuring ..."
 
-if ["$LIBRARY_PATH" -eq ""]
-then
+#if ["$LIBRARY_PATH" -eq ""]
+#then
  export LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
-else
- export LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LIBRARY_PATH
-fi
+#else
+# export LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LIBRARY_PATH
+#fi
 
 cd ${INSTALL_OBJ_DIR}
-#../${PACKAGE_NAME}/configure --prefix=${INSTALL_DIR} \
-#                             --with-gmp=${CK_ENV_LIB_GMP} \
-#                             --with-mpfr=${CK_ENV_LIB_MPFR} \
-#                             --with-mpc=${CK_ENV_LIB_MPC} \
-#                             --disable-multilib
+../${PACKAGE_NAME}/configure --prefix=${INSTALL_DIR} \
+                             --with-gmp=${CK_ENV_LIB_GMP} \
+                             --with-mpfr=${CK_ENV_LIB_MPFR} \
+                             --with-mpc=${CK_ENV_LIB_MPC} \
+                             --disable-multilib
 
 # FGG had issues with 'cannot find crti.o: No such file or directory',
 # hence FGG added export LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LIBRARY_PATH 
@@ -58,7 +58,7 @@ echo ""
 echo "Building ..."
 echo ""
 cd ${INSTALL_OBJ_DIR}
-make
+make -j4
 if [ "${?}" != "0" ] ; then
   echo "Error: Compilation failed in $PWD!" 
   exit 1

@@ -1,0 +1,16 @@
+{
+  "customize": {
+    "extra_dir": "", 
+    "version": "4.13a", 
+    "version_int": 4131
+  }, 
+  "process_script": "process", 
+  "soft_uoa": "8217f73a34c3ba52", 
+  "suggested_path": "texinfo", 
+  "tags": [
+    "tool", 
+    "texinfo", 
+    "v4.13", 
+    "v4" 
+  ]
+}

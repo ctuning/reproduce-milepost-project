@@ -9,6 +9,11 @@
     "version_int": 40404
   }, 
   "deps": {
+    "tool_texinfo": {
+      "local": "yes", 
+      "sort": 5, 
+      "tags": "tool,texinfo"
+    }, 
     "lib_cloog": {
       "local": "yes", 
       "sort": 50, 
