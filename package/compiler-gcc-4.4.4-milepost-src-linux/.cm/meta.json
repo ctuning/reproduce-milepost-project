@@ -47,6 +47,7 @@
     "compiler", 
     "gcc", 
     "milepost", 
+    "lang-c",
     "v4.4.4", 
     "v4.4", 
     "v4"

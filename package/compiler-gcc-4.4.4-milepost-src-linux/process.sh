@@ -27,6 +27,14 @@ rm ${PACKAGE_NAME}.tar
 export INSTALL_OBJ_DIR=${INSTALL_DIR}/obj
 mkdir $INSTALL_OBJ_DIR
 
+# 
+echo ""
+echo "Patching to support GCC v5+ ..."
+cp ${PACKAGE_DIR}/patch1 ${INSTALL_DIR}/${PACKAGE_NAME}
+
+cd ${INSTALL_DIR}/${PACKAGE_NAME}
+patch -p2 < patch1
+
 #
 echo ""
 echo "Configuring ..."
@@ -38,13 +46,16 @@ echo "Configuring ..."
 # export LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LIBRARY_PATH
 #fi
 
+export CFLAGS="-fgnu89-inline"
+
 cd ${INSTALL_OBJ_DIR}
 ../${PACKAGE_NAME}/configure --prefix=${INSTALL_DIR} \
                              --with-gmp=${CK_ENV_LIB_GMP} \
                              --with-mpfr=${CK_ENV_LIB_MPFR} \
                              --with-mpc=${CK_ENV_LIB_MPC} \
                              --disable-multilib
-
+#                             --build=x86_64-linux-gnu \
+#                             CFLAGS="-fgnu89-inline"
 # FGG had issues with 'cannot find crti.o: No such file or directory',
 # hence FGG added export LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LIBRARY_PATH 
 
