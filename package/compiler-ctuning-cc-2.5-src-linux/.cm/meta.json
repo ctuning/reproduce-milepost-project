@@ -1,1 +1,17 @@
-{}
+{
+  "customize": {
+    "extra_dir": "", 
+    "version": "2.5.1", 
+    "version_int": 20501
+  }, 
+  "process_script": "process", 
+  "soft_uoa": "bfe7a4662a8e87d0", 
+  "suggested_path": "ctuning-cc", 
+  "tags": [
+    "compiler", 
+    "ctuning-cc", 
+    "v2.5.1", 
+    "v2.5", 
+    "v2"
+  ]
+}
