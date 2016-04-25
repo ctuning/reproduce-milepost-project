@@ -1,8 +1,12 @@
 {
   "customize": {
     "extra_dir": "", 
-    "version": "0.17.0", 
-    "version_int": 1700
+    "split_version": [
+      0, 
+      17, 
+      0
+    ], 
+    "version": "0.17.0"
   }, 
   "deps": {
     "lib_gmp": {
@@ -10,6 +14,12 @@
       "tags": "lib,gmp"
     }
   }, 
+  "only_for_host_os_tags": [
+    "linux"
+  ], 
+  "only_for_target_os_tags": [
+    "linux"
+  ], 
   "process_script": "process", 
   "soft_uoa": "7dadf96440b48611", 
   "suggested_path": "cloog", 

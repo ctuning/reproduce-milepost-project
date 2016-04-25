@@ -1,8 +1,12 @@
 {
   "customize": {
     "extra_dir": "", 
-    "version": "0.11.2", 
-    "version_int": 1102
+    "split_version": [
+      0, 
+      11, 
+      2
+    ], 
+    "version": "0.11.2"
   }, 
   "deps": {
     "lib_gmp": {
@@ -21,6 +25,12 @@
       "tags": "lib,mpfr"
     }
   }, 
+  "only_for_host_os_tags": [
+    "linux"
+  ], 
+  "only_for_target_os_tags": [
+    "linux"
+  ], 
   "process_script": "process", 
   "soft_uoa": "b3065be3468aa97f", 
   "suggested_path": "ppl", 

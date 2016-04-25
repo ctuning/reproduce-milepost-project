@@ -1,8 +1,11 @@
 {
   "customize": {
     "extra_dir": "", 
-    "version": "0.10", 
-    "version_int": 1000
+    "split_version": [
+      0, 
+      10
+    ], 
+    "version": "0.10"
   }, 
   "deps": {
     "lib_gmp": {
@@ -10,6 +13,12 @@
       "tags": "lib,gmp"
     }
   }, 
+  "only_for_host_os_tags": [
+    "linux"
+  ], 
+  "only_for_target_os_tags": [
+    "linux"
+  ], 
   "process_script": "process", 
   "soft_uoa": "82dd13ca47c64729", 
   "suggested_path": "isl", 

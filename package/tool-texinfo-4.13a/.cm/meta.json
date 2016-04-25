@@ -1,9 +1,19 @@
 {
   "customize": {
     "extra_dir": "", 
-    "version": "4.13a", 
-    "version_int": 4131
+    "split_version": [
+      4, 
+      13, 
+      "a"
+    ], 
+    "version": "4.13.a"
   }, 
+  "only_for_host_os_tags": [
+    "linux"
+  ], 
+  "only_for_target_os_tags": [
+    "linux"
+  ], 
   "process_script": "process", 
   "soft_uoa": "8217f73a34c3ba52", 
   "suggested_path": "texinfo", 
@@ -11,6 +21,6 @@
     "tool", 
     "texinfo", 
     "v4.13", 
-    "v4" 
+    "v4"
   ]
 }

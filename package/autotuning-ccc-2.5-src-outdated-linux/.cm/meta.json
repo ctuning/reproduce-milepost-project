@@ -1,9 +1,18 @@
 {
   "customize": {
     "extra_dir": "", 
-    "version": "2.5", 
-    "version_int": 20500
+    "split_version": [
+      2, 
+      5
+    ], 
+    "version": "2.5"
   }, 
+  "only_for_host_os_tags": [
+    "linux"
+  ], 
+  "only_for_target_os_tags": [
+    "linux"
+  ], 
   "process_script": "process", 
   "soft_uoa": "24fc0bdc87f0f2f9", 
   "suggested_path": "ccc", 

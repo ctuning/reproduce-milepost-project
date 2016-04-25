@@ -1,18 +1,27 @@
 {
   "customize": {
     "extra_dir": "", 
-    "version": "2.5", 
-    "version_int": 250
+    "split_version": [
+      2, 
+      5
+    ], 
+    "version": "2.5"
   }, 
+  "only_for_host_os_tags": [
+    "linux"
+  ], 
+  "only_for_target_os_tags": [
+    "linux"
+  ], 
   "process_script": "process", 
   "soft_uoa": "585b44b38178af8c", 
   "suggested_path": "plugin-milepost-ctuning", 
   "tags": [
-    "plugin",
-    "milepost",
-    "ctuning",
-    "features",
-    "passes",
+    "plugin", 
+    "milepost", 
+    "ctuning", 
+    "features", 
+    "passes", 
     "v2.5", 
     "v2"
   ]

@@ -1,9 +1,19 @@
 {
   "customize": {
     "extra_dir": "", 
-    "version": "5.0.2", 
-    "version_int": 50002
+    "split_version": [
+      5, 
+      0, 
+      2
+    ], 
+    "version": "5.0.2"
   }, 
+  "only_for_host_os_tags": [
+    "linux"
+  ], 
+  "only_for_target_os_tags": [
+    "linux"
+  ], 
   "process_script": "process", 
   "soft_uoa": "ed501fa9004a6cb6", 
   "suggested_path": "gmp", 

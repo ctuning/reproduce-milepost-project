@@ -4,16 +4,15 @@
     "bugfix1": "yes", 
     "extra_dir": "", 
     "retarget": "no", 
+    "split_version": [
+      4, 
+      4, 
+      4
+    ], 
     "tool_prefix_configured": "yes", 
-    "version": "4.4.4", 
-    "version_int": 40404
+    "version": "4.4.4"
   }, 
   "deps": {
-    "tool_texinfo": {
-      "local": "yes", 
-      "sort": 5, 
-      "tags": "tool,texinfo"
-    }, 
     "lib_cloog": {
       "local": "yes", 
       "sort": 50, 
@@ -38,8 +37,19 @@
       "local": "yes", 
       "sort": 20, 
       "tags": "lib,mpfr"
+    }, 
+    "tool_texinfo": {
+      "local": "yes", 
+      "sort": 5, 
+      "tags": "tool,texinfo"
     }
   }, 
+  "only_for_host_os_tags": [
+    "linux"
+  ], 
+  "only_for_target_os_tags": [
+    "linux"
+  ], 
   "process_script": "process", 
   "soft_uoa": "a34a00e452894f94", 
   "suggested_path": "gcc-milepost", 
@@ -47,7 +57,7 @@
     "compiler", 
     "gcc", 
     "milepost", 
-    "lang-c",
+    "lang-c", 
     "v4.4.4", 
     "v4.4", 
     "v4"

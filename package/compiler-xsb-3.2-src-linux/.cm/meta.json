@@ -1,16 +1,25 @@
 {
   "customize": {
     "extra_dir": "3.2", 
-    "version": "3.2", 
-    "version_int": 30200
+    "split_version": [
+      3, 
+      2
+    ], 
+    "version": "3.2"
   }, 
+  "only_for_host_os_tags": [
+    "linux"
+  ], 
+  "only_for_target_os_tags": [
+    "linux"
+  ], 
   "process_script": "process", 
   "soft_uoa": "5ad48e9a7faa2dec", 
   "suggested_path": "xsb", 
   "tags": [
     "compiler", 
     "xsb", 
-    "lang-prolog",
+    "lang-prolog", 
     "v3.2", 
     "v3"
   ]
