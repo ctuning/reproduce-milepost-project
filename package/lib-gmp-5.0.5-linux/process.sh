@@ -15,8 +15,8 @@
 export PACKAGE_NAME=gmp-5.0.5
 
 cd ${INSTALL_DIR}
-cp ${PACKAGE_DIR}/${PACKAGE_NAME}.tar.gz .
-gzip -d ${PACKAGE_NAME}.tar.gz
+cp ${PACKAGE_DIR}/${PACKAGE_NAME}.tar.bz2 .
+bzip2 -d ${PACKAGE_NAME}.tar.bz2
 tar xvf ${PACKAGE_NAME}.tar
 rm ${PACKAGE_NAME}.tar
 

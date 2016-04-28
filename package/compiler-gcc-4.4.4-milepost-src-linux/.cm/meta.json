@@ -11,32 +11,32 @@
     "lib_cloog": {
       "local": "yes", 
       "sort": 50, 
-      "tags": "lib,cloog"
+      "tags": "lib,cloog,v0.17.0"
     }, 
     "lib_gmp": {
       "local": "yes", 
       "sort": 10, 
-      "tags": "lib,gmp"
+      "tags": "lib,gmp,v5.0.5"
     }, 
     "lib_isl": {
       "local": "yes", 
       "sort": 60, 
-      "tags": "lib,isl"
+      "tags": "lib,isl,v0.10"
     }, 
     "lib_mpc": {
       "local": "yes", 
       "sort": 30, 
-      "tags": "lib,mpc"
+      "tags": "lib,mpc,v0.9"
     }, 
     "lib_mpfr": {
       "local": "yes", 
       "sort": 20, 
-      "tags": "lib,mpfr"
+      "tags": "lib,mpfr,v3.1.2"
     }, 
     "tool_texinfo": {
       "local": "yes", 
       "sort": 5, 
-      "tags": "tool,texinfo"
+      "tags": "tool,texinfo,v4.13"
     }
   }, 
   "end_full_path": {
