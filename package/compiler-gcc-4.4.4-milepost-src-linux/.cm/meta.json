@@ -1,8 +1,4 @@
 {
-  "end_full_path": {
-    "linux": "bin/gcc", 
-    "mingw": "bin\\gcc" 
-  }, 
   "customize": {
     "add_m32": "no", 
     "bugfix1": "yes", 
@@ -42,6 +38,10 @@
       "sort": 5, 
       "tags": "tool,texinfo"
     }
+  }, 
+  "end_full_path": {
+    "linux": "bin/gcc", 
+    "mingw": "bin\\gcc"
   }, 
   "only_for_host_os_tags": [
     "linux"

@@ -3,16 +3,16 @@
     "extra_dir": "", 
     "version": "5.0.2"
   }, 
+  "end_full_path": {
+    "linux": "lib/libgmp.a", 
+    "mingw": "lib\\libgmp.a"
+  }, 
   "only_for_host_os_tags": [
     "linux"
   ], 
   "only_for_target_os_tags": [
     "linux"
   ], 
-  "end_full_path": {
-    "linux": "lib/libgmp.a", 
-    "mingw": "lib\\libgmp.a" 
-  }, 
   "process_script": "process", 
   "soft_uoa": "ed501fa9004a6cb6", 
   "suggested_path": "gmp", 

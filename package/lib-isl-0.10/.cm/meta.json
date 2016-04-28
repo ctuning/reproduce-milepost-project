@@ -1,8 +1,4 @@
 {
-  "end_full_path": {
-    "linux": "lib/libisl.a", 
-    "mingw": "lib\\libisl.a" 
-  }, 
   "customize": {
     "extra_dir": "", 
     "version": "0.10"
@@ -12,6 +8,10 @@
       "local": "yes", 
       "tags": "lib,gmp"
     }
+  }, 
+  "end_full_path": {
+    "linux": "lib/libisl.a", 
+    "mingw": "lib\\libisl.a"
   }, 
   "only_for_host_os_tags": [
     "linux"

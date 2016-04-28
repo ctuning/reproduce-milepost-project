@@ -1,8 +1,4 @@
 {
-  "end_full_path": {
-    "linux": "lib/libmpc.a", 
-    "mingw": "lib\\libmpc.a" 
-  }, 
   "customize": {
     "extra_dir": "", 
     "version": "1.0.3"
@@ -18,6 +14,10 @@
       "sort": 20, 
       "tags": "lib,mpfr"
     }
+  }, 
+  "end_full_path": {
+    "linux": "lib/libmpc.a", 
+    "mingw": "lib\\libmpc.a"
   }, 
   "only_for_host_os_tags": [
     "linux"

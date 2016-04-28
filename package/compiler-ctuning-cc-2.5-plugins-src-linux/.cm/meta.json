@@ -1,11 +1,11 @@
 {
-  "end_full_path": {
-    "linux": "bin/ml-feat-proc", 
-    "mingw": "bin\\ml-feat-proc" 
-  }, 
   "customize": {
     "extra_dir": "", 
     "version": "2.5"
+  }, 
+  "end_full_path": {
+    "linux": "bin/ml-feat-proc", 
+    "mingw": "bin\\ml-feat-proc"
   }, 
   "only_for_host_os_tags": [
     "linux"

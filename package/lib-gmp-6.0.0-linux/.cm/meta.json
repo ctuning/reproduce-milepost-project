@@ -1,11 +1,11 @@
 {
-  "end_full_path": {
-    "linux": "lib/libgmp.a", 
-    "mingw": "lib\\libgmp.a" 
-  }, 
   "customize": {
     "extra_dir": "", 
     "version": "6.0.0"
+  }, 
+  "end_full_path": {
+    "linux": "lib/libgmp.a", 
+    "mingw": "lib\\libgmp.a"
   }, 
   "only_for_host_os_tags": [
     "linux"

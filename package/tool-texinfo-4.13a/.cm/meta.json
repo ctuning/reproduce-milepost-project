@@ -1,11 +1,11 @@
 {
-  "end_full_path": {
-    "linux": "bin/info", 
-    "mingw": "bin\\info" 
-  }, 
   "customize": {
     "extra_dir": "", 
     "version": "4.13.a"
+  }, 
+  "end_full_path": {
+    "linux": "bin/info", 
+    "mingw": "bin\\info"
   }, 
   "only_for_host_os_tags": [
     "linux"

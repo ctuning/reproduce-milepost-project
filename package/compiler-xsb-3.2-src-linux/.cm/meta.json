@@ -1,11 +1,11 @@
 {
-  "end_full_path": {
-    "linux": "3.2/bin/xsb", 
-    "mingw": "3.2\bin\\xsb" 
-  }, 
   "customize": {
     "extra_dir": "3.2", 
     "version": "3.2"
+  }, 
+  "end_full_path": {
+    "linux": "3.2/bin/xsb", 
+    "mingw": "3.2\bin\\xsb"
   }, 
   "only_for_host_os_tags": [
     "linux"
