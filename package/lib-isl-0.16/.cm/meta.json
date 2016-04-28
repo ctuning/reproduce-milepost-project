@@ -1,0 +1,31 @@
+{
+  "customize": {
+    "extra_dir": "", 
+    "version": "0.16"
+  }, 
+  "deps": {
+    "lib_gmp": {
+      "local": "yes", 
+      "tags": "lib,gmp"
+    }
+  }, 
+  "end_full_path": {
+    "linux": "lib/libisl.a", 
+    "mingw": "lib\\libisl.a"
+  }, 
+  "only_for_host_os_tags": [
+    "linux"
+  ], 
+  "only_for_target_os_tags": [
+    "linux"
+  ], 
+  "process_script": "process", 
+  "soft_uoa": "82dd13ca47c64729", 
+  "suggested_path": "isl", 
+  "tags": [
+    "lib", 
+    "isl", 
+    "v0.16", 
+    "v0"
+  ]
+}
