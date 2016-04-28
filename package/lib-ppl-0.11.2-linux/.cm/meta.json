@@ -1,11 +1,6 @@
 {
   "customize": {
     "extra_dir": "", 
-    "split_version": [
-      0, 
-      11, 
-      2
-    ], 
     "version": "0.11.2"
   }, 
   "deps": {

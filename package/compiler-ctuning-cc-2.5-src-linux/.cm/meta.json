@@ -1,11 +1,10 @@
 {
+  "end_full_path": {
+    "linux": "bin/ctuning-cc", 
+    "mingw": "bin\\ctuning-cc" 
+  }, 
   "customize": {
     "extra_dir": "", 
-    "split_version": [
-      2, 
-      5, 
-      1
-    ], 
     "version": "2.5.1"
   }, 
   "only_for_host_os_tags": [

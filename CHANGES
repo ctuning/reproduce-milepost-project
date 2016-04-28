@@ -1,1 +1,4 @@
+* 2016.04.28 - major update to packages and environment to automate detection of already 
+               installed software (for Windows, Linux and partially Android).
+
 * 2016.03.24 - adding legacy support and demo for MILEPOST GCC, cTuning plugins, ctuning-cc

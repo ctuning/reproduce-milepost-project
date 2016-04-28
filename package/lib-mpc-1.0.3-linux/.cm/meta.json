@@ -1,11 +1,10 @@
 {
+  "end_full_path": {
+    "linux": "lib/libmpc.a", 
+    "mingw": "lib\\libmpc.a" 
+  }, 
   "customize": {
     "extra_dir": "", 
-    "split_version": [
-      1, 
-      0, 
-      3
-    ], 
     "version": "1.0.3"
   }, 
   "deps": {

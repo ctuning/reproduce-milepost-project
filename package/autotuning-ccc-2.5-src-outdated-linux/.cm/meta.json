@@ -1,10 +1,6 @@
 {
   "customize": {
     "extra_dir": "", 
-    "split_version": [
-      2, 
-      5
-    ], 
     "version": "2.5"
   }, 
   "only_for_host_os_tags": [

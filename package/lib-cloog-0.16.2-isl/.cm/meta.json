@@ -1,11 +1,10 @@
 {
+  "end_full_path": {
+    "linux": "lib/libcloog-isl.a", 
+    "mingw": "lib\\libcloog-isl.a" 
+  }, 
   "customize": {
     "extra_dir": "", 
-    "split_version": [
-      0, 
-      16, 
-      2
-    ], 
     "version": "0.16.2"
   }, 
   "deps": {

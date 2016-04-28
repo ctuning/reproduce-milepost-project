@@ -1,14 +1,13 @@
 {
+  "end_full_path": {
+    "linux": "bin/gcc", 
+    "mingw": "bin\\gcc" 
+  }, 
   "customize": {
     "add_m32": "no", 
     "bugfix1": "yes", 
     "extra_dir": "", 
     "retarget": "no", 
-    "split_version": [
-      4, 
-      4, 
-      4
-    ], 
     "tool_prefix_configured": "yes", 
     "version": "4.4.4"
   }, 
