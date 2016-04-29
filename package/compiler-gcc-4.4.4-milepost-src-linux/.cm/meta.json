@@ -23,15 +23,10 @@
       "sort": 60, 
       "tags": "lib,isl,v0.10"
     }, 
-    "lib_mpc": {
-      "local": "yes", 
-      "sort": 30, 
-      "tags": "lib,mpc,v0.9"
-    }, 
     "lib_mpfr": {
       "local": "yes", 
       "sort": 20, 
-      "tags": "lib,mpfr,v3.1.2"
+      "tags": "lib,mpfr,v3.1.0"
     }, 
     "tool_texinfo": {
       "local": "yes", 
