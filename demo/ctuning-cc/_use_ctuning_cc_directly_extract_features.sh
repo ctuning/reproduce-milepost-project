@@ -6,5 +6,5 @@ mkdir tmp
 cp *.c tmp
 cd tmp
 
-$CK_CC -O3 -lm *.c --ct-extract-features
+$CK_CC -O3 *.c --ct-extract-features -lm
 $CK_OBJDUMP a.out > a.lst
