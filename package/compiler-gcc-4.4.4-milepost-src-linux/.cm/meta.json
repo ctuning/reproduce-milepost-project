@@ -8,28 +8,33 @@
     "version": "4.4.4"
   }, 
   "deps": {
-    "lib_cloog": {
+    "lib-cloog": {
       "local": "yes", 
+      "name": "Cloog library", 
       "sort": 50, 
       "tags": "lib,cloog,v0.17.0"
     }, 
-    "lib_gmp": {
+    "lib-gmp": {
       "local": "yes", 
+      "name": "GMP library", 
       "sort": 10, 
       "tags": "lib,gmp,v5.0.5"
     }, 
-    "lib_isl": {
+    "lib-isl": {
       "local": "yes", 
+      "name": "ISL library", 
       "sort": 60, 
       "tags": "lib,isl,v0.10"
     }, 
-    "lib_mpfr": {
+    "lib-mpfr": {
       "local": "yes", 
+      "name": "MPFR library", 
       "sort": 20, 
       "tags": "lib,mpfr,v3.1.0"
     }, 
-    "tool_texinfo": {
+    "tool-texinfo": {
       "local": "yes", 
+      "name": "texinfo", 
       "sort": 5, 
       "tags": "tool,texinfo,v4.13"
     }
