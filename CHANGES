@@ -1,3 +1,5 @@
+* 2016.05.08 - renaming cloog to copy (to avoid mix up with the one from ck-dev-compilers)
+
 * 2016.04.28 - major update to packages and environment to automate detection of already 
                installed software (for Windows, Linux and partially Android).
 
