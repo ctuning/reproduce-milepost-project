@@ -1,0 +1,29 @@
+{
+  "customize": {
+    "extra_dir": "",
+    "install_env": {
+      "CERE_URL": "https://github.com/benchmark-subsetting/cere"
+    },
+    "version": "trunk"
+  },
+  "end_full_path": {
+    "linux": "bin/ToDo",
+    "mingw": "bin\\ToDo"
+  },
+  "only_for_host_os_tags": [
+    "windows",
+    "linux"
+  ],
+  "only_for_target_os_tags": [
+    "windows",
+    "linux"
+  ],
+  "process_script": "process",
+  "soft_uoa": "973c95734f81aee7",
+  "suggested_path": "cere-trunk",
+  "tags": [
+    "tool",
+    "cere",
+    "vtrunk"
+  ]
+}
