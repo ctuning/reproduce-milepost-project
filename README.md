@@ -9,6 +9,7 @@ semantic program features for compatibility with previous models.
 Prerequisites
 =============
 * Collective Knowledge Framework: http://github.com/ctuning/ck
+* m4 (sudo apt-get install m4)
 
 Publications
 ============
