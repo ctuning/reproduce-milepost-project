@@ -5,13 +5,15 @@
   }, 
   "end_full_path": {
     "linux": "3.2/bin/xsb", 
-    "mingw": "3.2\bin\\xsb"
+    "win": "Xsb-3-2-7-Windows-Compiled\\bin\\xsb"
   }, 
   "only_for_host_os_tags": [
-    "linux"
+    "linux",
+    "windows"
   ], 
   "only_for_target_os_tags": [
-    "linux"
+    "linux",
+    "windows"
   ], 
   "process_script": "process", 
   "soft_uoa": "5ad48e9a7faa2dec", 
