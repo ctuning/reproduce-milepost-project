@@ -1,3 +1,5 @@
+* 2017.05.01 - added support for Windows and partially for RPi3
+
 * 2016.11.22 - fixing dependencies (m4) and version detecton of texinfo (thanks to C ANIL Reddy)
 
 * 2016.05.08 - renaming cloog to copy (to avoid mix up with the one from ck-dev-compilers)

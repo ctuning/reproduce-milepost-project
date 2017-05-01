@@ -1,0 +1,45 @@
+{
+  "customize": {
+    "add_m32": "no",
+    "bugfix1": "yes",
+    "extra_dir": "",
+    "retarget": "no",
+    "tool_prefix_configured": "yes",
+    "version": "4.4.4"
+  },
+  "deps": {
+    "tool-texinfo": {
+      "local": "yes",
+      "name": "texinfo",
+      "sort": 5,
+      "only_for_target_os_tags": [
+        "linux"
+      ],
+      "tags": "tool,texinfo,v4.13"
+    }
+  },
+  "end_full_path": {
+    "linux": "bin/gcc",
+    "win": "src\\etc\\milepost-gcc-4.4.4-bin\\bin\\gcc.exe"
+  },
+  "only_for_host_os_tags": [
+    "linux",
+    "windows"
+  ],
+  "only_for_target_os_tags": [
+    "linux",
+    "windows"
+  ],
+  "process_script": "process",
+  "soft_uoa": "a34a00e452894f94",
+  "suggested_path": "gcc-milepost",
+  "tags": [
+    "compiler",
+    "gcc",
+    "milepost",
+    "lang-c",
+    "v4.4.4",
+    "v4.4",
+    "v4"
+  ]
+}

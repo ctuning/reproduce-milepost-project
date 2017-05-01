@@ -1,0 +1,41 @@
+{
+  "customize": {
+    "extra_dir": "", 
+    "version": "2.5"
+  }, 
+  "deps": {
+    "compiler": {
+      "local": "yes",
+      "name": "C compiler",
+      "only_for_target_os_tags": [
+        "windows"
+      ],
+      "sort": 10,
+      "tags": "compiler,lang-c,milepost,gcc"
+    }
+  },
+  "end_full_path": {
+    "linux": "bin/ml-feat-proc", 
+    "win": "bin\\ml-feat-proc.exe"
+  }, 
+  "only_for_host_os_tags": [
+    "linux",
+    "windows"
+  ], 
+  "only_for_target_os_tags": [
+    "linux",
+    "windows"
+  ], 
+  "process_script": "process", 
+  "soft_uoa": "585b44b38178af8c", 
+  "suggested_path": "plugin-milepost-ctuning", 
+  "tags": [
+    "plugin", 
+    "milepost", 
+    "ctuning", 
+    "features", 
+    "passes", 
+    "v2.5", 
+    "v2"
+  ]
+}
