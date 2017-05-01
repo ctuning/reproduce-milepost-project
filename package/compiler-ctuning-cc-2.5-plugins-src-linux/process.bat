@@ -1,0 +1,120 @@
+@echo off
+
+rem
+rem Installation script for cM packages.
+rem Part of Collective Mind Infrastructure (cM).
+rem
+rem See cM LICENSE.txt for licensing details.
+rem See cM Copyright.txt for copyright details.
+rem
+rem Developer(s): Grigori Fursin, started on 2011.09
+rem
+
+set PACKAGE_NAME=ctuning-cc-2.5-plugins
+set ICI2_PLUGIN_VER=gcc-plugin-ici2
+set CM_COMPILER_FLAGS_CC_OPTS=-O2
+
+rem
+echo.
+echo Copying package files ...
+
+cd %INSTALL_DIR%
+copy /B %PACKAGE_DIR%\%PACKAGE_NAME%-win.tar.bz2 .
+bzip2 -d %PACKAGE_NAME%-win.tar.bz2
+tar xvf %PACKAGE_NAME%-win.tar
+rm %PACKAGE_NAME%-win.tar
+
+rem
+echo.
+echo Configuring ...
+
+mkdir bin
+mkdir lib
+
+rem #############################################################################
+echo.
+echo Compiling extract-program-structure MILEPOST\cTuning plugin ...
+
+cd %INSTALL_DIR%\%PACKAGE_NAME%\src\extract-program-structure
+
+mingw32-make clean ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+mingw32-make MISCOPT=%CM_COMPILER_FLAGS_CC_OPTS% EXTRAINCLUDE=-I%CK_ENV_COMPILER_GCC_SRC% ICI_PLUGIN_VER=%ICI2_PLUGIN_VER% LD_SHARED_EXTRA=%CK_ENV_COMPILER_GCC_LIB_GCC_PLUGIN_CC%
+mingw32-make install INSTALL_DIR=%INSTALL_DIR%\lib ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+
+mingw32-make clean ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+mingw32-make MISCOPT=%CM_COMPILER_FLAGS_CC_OPTS% EXTRAINCLUDE=-I%CK_ENV_COMPILER_GCC_SRC% ICI_PLUGIN_VER=%ICI2_PLUGIN_VER% LD_SHARED_EXTRA=%CK_ENV_COMPILER_GCC_LIB_GCC_PLUGIN_FC%
+mingw32-make install INSTALL_DIR=%INSTALL_DIR%\lib ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+
+mingw32-make clean ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+mingw32-make MISCOPT=%CM_COMPILER_FLAGS_CC_OPTS% EXTRAINCLUDE=-I%CK_ENV_COMPILER_GCC_SRC% ICI_PLUGIN_VER=%ICI2_PLUGIN_VER% LD_SHARED_EXTRA=%CK_ENV_COMPILER_GCC_LIB_GCC_PLUGIN_CPP%
+mingw32-make install INSTALL_DIR=%INSTALL_DIR%\lib ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+
+
+rem #############################################################################
+echo.
+echo Compiling save-executed-passes MILEPOST\cTuning plugin ...
+
+cd %INSTALL_DIR%\%PACKAGE_NAME%\src\save-executed-passes
+
+mingw32-make clean ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+mingw32-make MISCOPT=%CM_COMPILER_FLAGS_CC_OPTS% EXTRAINCLUDE=-I%CK_ENV_COMPILER_GCC_SRC% ICI_PLUGIN_VER=%ICI2_PLUGIN_VER% LD_SHARED_EXTRA=%CK_ENV_COMPILER_GCC_LIB_GCC_PLUGIN_CC%
+mingw32-make install INSTALL_DIR=%INSTALL_DIR%\lib ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+
+mingw32-make clean ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+mingw32-make MISCOPT=%CM_COMPILER_FLAGS_CC_OPTS% EXTRAINCLUDE=-I%CK_ENV_COMPILER_GCC_SRC% ICI_PLUGIN_VER=%ICI2_PLUGIN_VER% LD_SHARED_EXTRA=%CK_ENV_COMPILER_GCC_LIB_GCC_PLUGIN_FC%
+mingw32-make install INSTALL_DIR=%INSTALL_DIR%\lib ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+
+mingw32-make clean ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+mingw32-make MISCOPT=%CM_COMPILER_FLAGS_CC_OPTS% EXTRAINCLUDE=-I%CK_ENV_COMPILER_GCC_SRC% ICI_PLUGIN_VER=%ICI2_PLUGIN_VER% LD_SHARED_EXTRA=%CK_ENV_COMPILER_GCC_LIB_GCC_PLUGIN_CPP%
+mingw32-make install INSTALL_DIR=%INSTALL_DIR%\lib ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+
+
+rem #############################################################################
+echo.
+echo Compiling substitute-passes MILEPOST\cTuning plugin ...
+
+cd %INSTALL_DIR%\%PACKAGE_NAME%\src\substitute-passes
+
+mingw32-make clean ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+mingw32-make MISCOPT=%CM_COMPILER_FLAGS_CC_OPTS% EXTRAINCLUDE=-I%CK_ENV_COMPILER_GCC_SRC% ICI_PLUGIN_VER=%ICI2_PLUGIN_VER% LD_SHARED_EXTRA=%CK_ENV_COMPILER_GCC_LIB_GCC_PLUGIN_CC%
+mingw32-make install INSTALL_DIR=%INSTALL_DIR%\lib ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+
+mingw32-make clean ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+mingw32-make MISCOPT=%CM_COMPILER_FLAGS_CC_OPTS% EXTRAINCLUDE=-I%CK_ENV_COMPILER_GCC_SRC% ICI_PLUGIN_VER=%ICI2_PLUGIN_VER% LD_SHARED_EXTRA=%CK_ENV_COMPILER_GCC_LIB_GCC_PLUGIN_FC%
+mingw32-make install INSTALL_DIR=%INSTALL_DIR%\lib ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+
+mingw32-make clean ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+mingw32-make MISCOPT=%CM_COMPILER_FLAGS_CC_OPTS% EXTRAINCLUDE=-I%CK_ENV_COMPILER_GCC_SRC% ICI_PLUGIN_VER=%ICI2_PLUGIN_VER% LD_SHARED_EXTRA=%CK_ENV_COMPILER_GCC_LIB_GCC_PLUGIN_CPP%
+mingw32-make install INSTALL_DIR=%INSTALL_DIR%\lib ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+
+
+rem #############################################################################
+echo.
+echo Compiling extract-program-static-features MILEPOST\cTuning plugin ...
+
+cd %INSTALL_DIR%\%PACKAGE_NAME%\src\extract-program-static-features
+
+mingw32-make clean ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+mingw32-make MISCOPT=%CM_COMPILER_FLAGS_CC_OPTS% EXTRAINCLUDE=-I%CK_ENV_COMPILER_GCC_SRC% ICI_PLUGIN_VER=%ICI2_PLUGIN_VER% LD_SHARED_EXTRA=%CK_ENV_COMPILER_GCC_LIB_GCC_PLUGIN_CC%
+mingw32-make install INSTALL_DIR=%INSTALL_DIR%\lib ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+
+mingw32-make clean ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+mingw32-make MISCOPT=%CM_COMPILER_FLAGS_CC_OPTS% EXTRAINCLUDE=-I%CK_ENV_COMPILER_GCC_SRC% ICI_PLUGIN_VER=%ICI2_PLUGIN_VER% LD_SHARED_EXTRA=%CK_ENV_COMPILER_GCC_LIB_GCC_PLUGIN_FC%
+mingw32-make install INSTALL_DIR=%INSTALL_DIR%\lib ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+
+mingw32-make clean ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+mingw32-make MISCOPT=%CM_COMPILER_FLAGS_CC_OPTS% EXTRAINCLUDE=-I%CK_ENV_COMPILER_GCC_SRC% ICI_PLUGIN_VER=%ICI2_PLUGIN_VER% LD_SHARED_EXTRA=%CK_ENV_COMPILER_GCC_LIB_GCC_PLUGIN_CPP%
+mingw32-make install INSTALL_DIR=%INSTALL_DIR%\lib ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+
+#############################################################################
+echo ""
+echo "Compiling extract-program-static-features MILEPOST\cTuning aux tool ..."
+
+cd %INSTALL_DIR%\%PACKAGE_NAME%\src\extract-program-static-features\ml-feat-proc
+
+mingw32-make clean ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+mingw32-make XSB_DIR=%CK_ENV_COMPILER_PROLOG% XSB_DIR_ADD=%XSB_DIR_ADD% ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+mingw32-make install INSTALL_DIR=%INSTALL_DIR%\bin ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+mingw32-make clean ICI_PLUGIN_VER=%ICI2_PLUGIN_VER%
+
+exit /b 0
