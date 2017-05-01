@@ -65,6 +65,13 @@ License
 Installation
 ============
 
+You may need to install dependencies. For example, on Ubunutu or Raspbian you need to install the following:
+
+```
+$ sudo apt-get install build-essential automake autoconf libncurses-dev
+```
+
+
 ```
 $ ck pull repo:reproduce-milepost-project
 $ ck install package:compiler-gcc-4.4.4-milepost-src-linux

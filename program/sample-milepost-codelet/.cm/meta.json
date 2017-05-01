@@ -1,0 +1,33 @@
+{
+  "backup_data_uid": "16a12a3fee44b659", 
+  "compile_deps": {
+    "compiler": {
+      "local": "yes", 
+      "name": "C compiler", 
+      "sort": 10, 
+      "tags": "compiler,lang-c"
+    } 
+  }, 
+  "compiler_env": "CK_CC", 
+  "data_name": "sample-milepost-codelet", 
+  "extra_ld_vars": "$<<CK_EXTRA_LIB_M>>$", 
+  "main_language": "c", 
+  "process_in_tmp": "yes", 
+  "program": "yes", 
+  "run_cmds": {
+    "default": {
+      "ignore_return_code": "no", 
+      "run_time": {
+        "run_cmd_main": "$#BIN_FILE#$" 
+      }
+    } 
+  }, 
+  "source_files": [
+    "kernel.c"
+  ], 
+  "tags": [
+    "sample-milepost-program", 
+    "lang-c" 
+  ], 
+  "target_file": "a"
+}

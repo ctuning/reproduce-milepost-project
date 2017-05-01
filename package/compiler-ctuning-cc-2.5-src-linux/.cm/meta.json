@@ -3,15 +3,28 @@
     "extra_dir": "", 
     "version": "2.5.1"
   }, 
+  "deps": {
+    "compiler": {
+      "local": "yes",
+      "name": "C compiler",
+      "only_for_target_os_tags": [
+        "windows"
+      ],
+      "sort": 10,
+      "tags": "compiler,lang-c,milepost,gcc"
+    }
+  },
   "end_full_path": {
     "linux": "bin/ctuning-cc", 
-    "mingw": "bin\\ctuning-cc"
+    "win": "bin\\ctuning-cc.exe"
   }, 
   "only_for_host_os_tags": [
-    "linux"
+    "linux",
+    "windows"
   ], 
   "only_for_target_os_tags": [
-    "linux"
+    "linux",
+    "windows"
   ], 
   "process_script": "process", 
   "soft_uoa": "bfe7a4662a8e87d0", 
