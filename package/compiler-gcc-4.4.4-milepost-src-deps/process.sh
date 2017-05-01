@@ -29,7 +29,7 @@ export PACKAGE_NAME=milepost-gcc-4.4.4
 cd ${INSTALL_DIR}
 
 # Set special vars
-if ["$LD_LIBRARY_PATH" -eq ""]
+if [ "$LD_LIBRARY_PATH" == "" ]
 then
  export LD_LIBRARY_PATH=/usr/lib/${MACHINE}:/usr/lib/gcc/${MACHINE}/${GCC_VER}
 else
@@ -40,7 +40,7 @@ else
  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH1:/usr/lib/${MACHINE}:/usr/lib/gcc/${MACHINE}/${GCC_VER}
 fi
 
-if ["$LIBRARY_PATH" -eq ""]
+if [ "$LIBRARY_PATH" == "" ]
 then
  export LIBRARY_PATH=/usr/lib/${MACHINE}:/usr/lib/gcc/${MACHINE}/${GCC_VER}
 else
@@ -54,10 +54,10 @@ fi
 echo ""
 echo "Copying package files ..."
 
-#cp ${PACKAGE_DIR}/${PACKAGE_NAME}.tar.bz2 .
-#bzip2 -d ${PACKAGE_NAME}.tar.bz2
-#tar xvf ${PACKAGE_NAME}.tar
-#rm ${PACKAGE_NAME}.tar
+cp ${PACKAGE_DIR}/${PACKAGE_NAME}.tar.bz2 .
+bzip2 -d ${PACKAGE_NAME}.tar.bz2
+tar xvf ${PACKAGE_NAME}.tar
+rm ${PACKAGE_NAME}.tar
 
 rm -rf obj
 
@@ -69,7 +69,7 @@ echo ""
 echo "Patching to support GCC v5+ ..."
 
 cd ${INSTALL_DIR}/${PACKAGE_NAME}
-#patch -p2 < ${PACKAGE_DIR}/patch1
+patch -p2 < ${PACKAGE_DIR}/patch1
 
 #
 echo ""
