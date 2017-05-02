@@ -21,7 +21,8 @@
   ], 
   "only_for_target_os_tags": [
     "linux",
-    "windows"
+    "windows",
+    "mingw"
   ], 
   "process_script": "process", 
   "soft_uoa": "585b44b38178af8c", 

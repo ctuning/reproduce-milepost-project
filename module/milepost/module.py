@@ -179,6 +179,8 @@ def show(i):
     flags=i.get('milepost_flags','')
     if flags=='' or ar: flags='-O1'
 
+    flags=safe_str(flags)
+
     x='<input type="text" name="milepost_flags" value="'+flags+'">\n'
 
     h+='  <td align="left">'+x+'</td>\n'
@@ -189,6 +191,8 @@ def show(i):
 
     mpass=i.get('milepost_pass','')
     if mpass=='' or ar: mpass='fre'
+
+    mpass=safe_str(mpass)
 
     x='<input type="text" name="milepost_pass" value="'+mpass+'">\n'
 
@@ -222,10 +226,22 @@ def show(i):
           r=ck.save_text_file({'text_file':fn, 'string':prog})
           if r['return']>0: return r
 
-          
+          # Compile
+          r=ck.access({'action':'compile',
+                       'module_uoa':cfg['module_deps']['program'],
+                       'data_uoa':prog_uid,
+                       'flags':'--ct-extract-features '+flags,
+                       'env':{'ICI_PROG_FEAT_PASS':mpass}})
+          if r['return']>0: return r
+
 
 
     return {'return':0, 'html':h, 'style':st}
+
+
+def safe_str(s):
+    s=s.replace(';',' ').replace('&',' ').replace('>',' ').replace('<',' ')
+    return s
 
 ##############################################################################
 # open dashboard

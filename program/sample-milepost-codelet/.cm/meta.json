@@ -3,9 +3,9 @@
   "compile_deps": {
     "compiler": {
       "local": "yes", 
-      "name": "C compiler", 
+      "name": "cTuning CC compiler", 
       "sort": 10, 
-      "tags": "compiler,lang-c"
+      "tags": "compiler,lang-c,ctuning-cc"
     } 
   }, 
   "compiler_env": "CK_CC", 
