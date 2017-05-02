@@ -349,6 +349,10 @@ def show(i):
 #    h+='<button type="submit" name="action_reset">Reset</button>\n'
 #    h+='</center>\n'
 
+    scenario=i.get('scenario','')
+    if scenario=='': scenario='8289e0cf24346aa7'
+    i['scenario']=scenario
+
     ii={}
     if not ar: ii=copy.deepcopy(i)
 
