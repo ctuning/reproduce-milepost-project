@@ -71,11 +71,27 @@ You may need to install dependencies. For example, on Ubunutu or Raspbian you ne
 $ sudo apt-get install build-essential automake autoconf libncurses-dev
 ```
 
+On x86(64) Linux:
 
 ```
 $ ck pull repo:reproduce-milepost-project
-$ ck install package:compiler-gcc-4.4.4-milepost-src-linux
-$ ck install package:compiler-ctuning-cc-2.5-plugins-src-linux
+$ ck install package:compiler-ctuning-cc-2.5-src
+```
+
+This should install MILEPOST GCC, plugins and ctuning-cc wrapper.
+
+If you have a limited memory on your device (such as Raspberry Pi), install MILEPOST GCC first as following:
+```
+$ ck install package:compiler-gcc-4.4.4-milepost-src-no-deps --env.PARALLEL_BUILDS=2
+```
+
+You can install MILEPOST GCC on Windows as following:
+```
+$ ck install package:compiler-gcc-4.4.4-milepost-src-no-deps
+```
+or 
+```
+$ ck install package:compiler-gcc-4.4.4-milepost-src-no-deps --target=mingw-64
 ```
 
 Usage
@@ -90,6 +106,11 @@ $ ck find demo:ctuning-cc
 You can try two self-descriptive scripts:
 * _use_ctuning_cc_directly_extract_features.sh
 * _use_ctuning_cc_via_ck_pipeline.sh
+
+You can also try MILEPOST GCC demo via interactive CK dashboard:
+```
+$ ck dashboard milepost
+```
 
 Feedback
 ========
