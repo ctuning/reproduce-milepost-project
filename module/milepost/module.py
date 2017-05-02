@@ -29,6 +29,9 @@ onchange='document.'+form_name+'.submit();'
 default_prog_uoa='sample-milepost-codelet'
 prog_kernel_c='kernel.c'
 
+ici1='ici_features_function.main.'
+ici2='ici_passes_function.main.txt'
+
 ##############################################################################
 # Initialize module
 
@@ -63,6 +66,8 @@ def show(i):
     """
 
     import os
+    import shutil
+    import time
 
     # State: extract
     ae=False
@@ -127,15 +132,30 @@ def show(i):
     if r['return']>0: return r
     dprog=r['dict']
     p=r['path']
+    prog_path=r['path']
+
+    default_prog_uid=r['data_uid']
 
     fn=os.path.join(p,prog_kernel_c)
 
     r=ck.load_text_file({'text_file':fn})
     if r['return']>0: return r
 
-    default_prog=r['string'].strip()
+    default_prog=r['string'].replace('\\r','').strip()
+    
+    prog=i.get('program_sources','').replace('\\r','').strip()
+    # Strange size, so save file and load it again
+    rx=ck.gen_tmp_file({'prefix':'tmp-', 'suffix':'.tmp'})
+    if rx['return']>0: return rx
+    ftmp=rx['file_name']
 
-    prog=i.get('program_sources','').strip()
+    r=ck.save_text_file({'text_file':ftmp, 'string':prog})
+    if r['return']>0: return r
+
+    r=ck.load_text_file({'text_file':ftmp, 'delete_after_read':'yes'})
+    if r['return']>0: return r
+    prog=r['string']
+
     if prog=='' or ar:
        prog=default_prog
 
@@ -208,6 +228,13 @@ def show(i):
     h+='<button type="submit" name="action_reset">Reset</button>\n'
     h+='</center>\n'
 
+    # Check features from cmd
+    features={}
+    if not ar:
+       for k in i:
+           if k.startswith('mft'):
+              features[k]=i[k]
+
     # If extract
     if ae:
        if prog!=default_prog:
@@ -225,19 +252,90 @@ def show(i):
 
           r=ck.save_text_file({'text_file':fn, 'string':prog})
           if r['return']>0: return r
+       else:
+          prog_uid=default_prog_uid
 
-          # Compile
-          r=ck.access({'action':'compile',
+       # Remove tmp dir
+       px=os.path.join(prog_path,'tmp')
+       if os.path.isdir(px): 
+          shutil.rmtree(px)
+          time.sleep(1)
+
+       # Compile
+       r=ck.access({'action':'compile',
+                    'module_uoa':cfg['module_deps']['program'],
+                    'data_uoa':prog_uid,
+                    'flags':'--ct-extract-features '+flags,
+                    'env':{'ICI_PROG_FEAT_PASS':mpass}})
+       if r['return']>0: 
+          h+='<p><center><b>Compilation failed: '+r['error']+'<br></center>\n'
+          prog_uid=''
+       else:   
+          r=ck.access({'action':'load',
                        'module_uoa':cfg['module_deps']['program'],
-                       'data_uoa':prog_uid,
-                       'flags':'--ct-extract-features '+flags,
-                       'env':{'ICI_PROG_FEAT_PASS':mpass}})
+                       'data_uoa':prog_uid})
           if r['return']>0: return r
+          prog_path=r['path']
 
+          f1=os.path.join(prog_path,'tmp',ici1+mpass+'.ft')
+          f2=os.path.join(prog_path,'tmp',ici2)
 
+          if not os.path.isfile(f1) or not os.path.isfile(f2):
+             h+='<p>WARNING: features were not extracted - file with features is not found!\n'
+          else:
+             r=ck.load_text_file({'text_file':f1})
+             if r['return']>0: return r
+             s1=r['string'].strip()
+          
+             r=ck.load_text_file({'text_file':f2})
+             if r['return']>0: return r
+             s2=r['string'].strip()
+
+             h+='<hr><b>Passes during feature extration:</b><br>\n'
+             h+='<p>'+s2+'<br>'
+
+             # Parse features
+             fx=s1.split(',')
+             for q in fx:
+                 qq=q.strip().split('=')
+                 if len(qq)==2:
+                    k=qq[0][2:]
+                    v=float(qq[1])
+
+                    features['ft'+str(k)]=v
+
+          h+='</center>\n'
+
+    # Show features
+    r=ck.access({'action':'load',
+                 'module_uoa':cfg['module_deps']['module'],
+                 'data_uoa':cfg['module_deps']['program.static.features']})
+    if r['return']>0: return r
+
+    d=r['dict']
+
+    ml1=d.get('milepost_description_ctuning_page','')
+    ml2=d.get('milepost_features_description',{})
+    ml3=d.get('milepost_normalization_feature','')
+
+    h+='<hr><p><center><h3>MILEPOST features (main function)</h3>\n'
+
+    h+='<table border="1" cellpadding="5" cellspacing="0">\n'
+    h+=' <tr><td><b>Feature</b></td><td><b>Description</b></td></tr>\n'
+
+    for k in sorted(ml2, key=lambda x: int(x)):
+        q=ml2[k]
+        desc=q.get('desc','')
+
+        ft='ft'+str(k)
+        h+=' <tr><td><b>'+ft+'</b> ('+desc+')</td><td><input type="text" name="m'+ft+'" value="'+str(features.get(ft,''))+'"></td></tr>\n'
+
+    h+='</table>\n'
 
     return {'return':0, 'html':h, 'style':st}
 
+##############################################################################
+# make safe strings for CMD ...
 
 def safe_str(s):
     s=s.replace(';',' ').replace('&',' ').replace('>',' ').replace('<',' ')
