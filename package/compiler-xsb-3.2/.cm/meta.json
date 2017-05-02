@@ -5,6 +5,7 @@
   }, 
   "end_full_path": {
     "linux": "3.2/bin/xsb", 
+    "mingw": "Xsb-3-2-7-Windows-Compiled\\bin\\xsb",
     "win": "Xsb-3-2-7-Windows-Compiled\\bin\\xsb"
   }, 
   "only_for_host_os_tags": [

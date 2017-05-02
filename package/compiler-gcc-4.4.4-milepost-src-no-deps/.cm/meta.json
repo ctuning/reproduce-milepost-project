@@ -20,7 +20,8 @@
   },
   "end_full_path": {
     "linux": "bin/gcc",
-    "win": "src\\etc\\milepost-gcc-4.4.4-bin\\bin\\gcc.exe"
+    "win": "src\\etc\\milepost-gcc-4.4.4-bin\\bin\\gcc.exe",
+    "mingw": "src\\etc\\milepost-gcc-4.4.4-bin\\bin\\gcc.exe"
   },
   "only_for_host_os_tags": [
     "linux",

@@ -16,6 +16,7 @@
   },
   "end_full_path": {
     "linux": "bin/ctuning-cc", 
+    "mingw": "bin\\ctuning-cc.exe",
     "win": "bin\\ctuning-cc.exe"
   }, 
   "only_for_host_os_tags": [
