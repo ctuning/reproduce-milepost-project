@@ -13,7 +13,7 @@
   },
   "end_full_path": {
     "linux": "bin/ml-feat-proc", 
-    "mingw": "bin\\ctuning-cc.exe",
+    "mingw": "bin\\ml-feat-proc.exe",
     "win": "bin\\ml-feat-proc.exe"
   }, 
   "only_for_host_os_tags": [
