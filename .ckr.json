@@ -4,10 +4,7 @@
   "dict": {
     "repo_deps": [
       {
-        "repo_uoa": "ck-autotuning"
-      },
-      {
-        "repo_uoa": "ctuning-programs"
+        "repo_uoa": "ck-crowdtuning"
       } 
     ], 
     "url": "https://github.com/ctuning/reproduce-milepost-project", 

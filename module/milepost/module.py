@@ -17,10 +17,15 @@ hextra='<i><center>\n'
 hextra+='This is a community-driven R&D: \n'
 hextra+=' [ <a href="https://en.wikipedia.org/wiki/Collective_Knowledge_(software)">CK wikipedia</a> , \n'
 hextra+=' <a href="https://en.wikipedia.org/wiki/MILEPOST_GCC">MILEPOST GCC</a> , \n'
-hextra+=' <a href="https://hal.archives-ouvertes.fr/inria-00436029">Vision paper</a> , \n'
-hextra+='<a href="https://www.researchgate.net/publication/304010295_Collective_Knowledge_Towards_RD_Sustainability">CK paper</a>, \n'
-hextra+='<a href="https://arxiv.org/abs/1506.06256">Crowd-tuning</a>, \n'
-hextra+='<a href="https://www.youtube.com/watch?v=Q94yWxXUMP0">YouTube intro</a> ] \n'
+hextra+=' Vision papers (<a href="https://hal.archives-ouvertes.fr/inria-00436029">MILEPOST and cTuning</a> , \n'
+hextra+=' <a href="https://arxiv.org/abs/1506.06256">crowd-tuning</a>, \n'
+hextra+=' <a href="https://www.researchgate.net/publication/304010295_Collective_Knowledge_Towards_RD_Sustainability">CK</a>), \n'
+hextra+='<a href="https://www.youtube.com/watch?v=Q94yWxXUMP0">YouTube intro</a> ]<br> \n'
+
+hextra+='Optimizations results are continuously shared by volunteers across diverse programs, data sets and platforms: '
+hextra+='<a href="http://cknowledge.org/repo/web.php?native_action=show&native_module_uoa=program.optimization&scenario=8289e0cf24346aa7">GCC</a> , \n'
+hextra+='<a href="http://cknowledge.org/repo/web.php?native_action=show&native_module_uoa=program.optimization&scenario=2aaed4c520956635">LLVM</a> \n'
+
 hextra+='</center></i>\n'
 
 form_name='milepost_web_form'
@@ -68,6 +73,7 @@ def show(i):
     import os
     import shutil
     import time
+    import copy
 
     # State: extract
     ae=False
@@ -116,7 +122,7 @@ def show(i):
     h+=r['html']
 
     # Header
-    h+='<h2>Predict optimization using MILEPOST program features via CK (concept demo)</h2>\n'
+    h+='<h2>Predict optimization using MILEPOST program features via CK (CK JSON API demo)</h2>\n'
 
     # First params
     h+='<table border="0" cellpadding="9" cellspacing="0">\n'
@@ -206,7 +212,7 @@ def show(i):
     h+='  <td align="left">'+x+'</td>\n'
 
     h+=' <tr align="right">\n'
-    h+='  <td><b>MILEPOST GCC pass to extrat features</b></td>\n'
+    h+='  <td><b>MILEPOST GCC pass to extract features</b></td>\n'
     x=''
 
     mpass=i.get('milepost_pass','')
@@ -233,7 +239,7 @@ def show(i):
     if not ar:
        for k in i:
            if k.startswith('mft'):
-              features[k]=i[k]
+              features[k[1:]]=i[k]
 
     # If extract
     if ae:
@@ -331,6 +337,68 @@ def show(i):
         h+=' <tr><td><b>'+ft+'</b> ('+desc+')</td><td><input type="text" name="m'+ft+'" value="'+str(features.get(ft,''))+'"></td></tr>\n'
 
     h+='</table>\n'
+
+    # Buttons
+    h+='<p><center>\n'
+    h+='<button type="submit" name="action_refresh">Refresh form and find similar program</button>\n'
+    h+='</center>\n'
+
+    # Find similar
+#    h+='<p><center>\n'
+#    h+='<button type="submit" name="find_similar">Find programs with similar features</button>\n'
+#    h+='<button type="submit" name="action_reset">Reset</button>\n'
+#    h+='</center>\n'
+
+    ii={}
+    if not ar: ii=copy.deepcopy(i)
+
+    ii['action']='show'
+    ii['module_uoa']='program.optimization'
+    ii['widget']='yes'
+    ii['prepared_url0']=url0
+    ii['prepared_url1']=url1
+    ii['prepared_form_name']=form_name
+    ii['prepared_scenario_tags']='program-features'
+
+    r=ck.access(ii)
+    if r['return']>0: return r
+     
+    results=r.get('results',[])
+
+    h+='<p><hr>'+r.get('html','')
+    st+=r.get('style','')
+
+    # Save a few vars to keep state
+    if len(results)==1:
+       # showing unique result
+       rr=results[0]
+
+       muoa=rr['module_uoa']
+       duoa=rr['data_uoa']
+
+       ii={'action':'html_viewer',
+           'module_uoa':muoa,
+           'data_uoa':duoa,
+           'url_base':url0}
+       r=ck.access(ii)
+       if r['return']>0: return r
+
+       h+='<p>'+r.get('html','')
+       st+=r.get('style','')
+    else:
+       h+='<br><a href="http://arxiv.org/abs/1506.06256"><img src="'+url0+'action=pull&common_action=yes&cid='+cfg['module_deps']['module']+':'+cfg['module_deps']['program.optimization']+'&filename=images/image-workflow1.png"></a><br>\n'
+
+
+
+
+
+
+
+
+
+
+
+
 
     return {'return':0, 'html':h, 'style':st}
 
