@@ -29,8 +29,7 @@ export PACKAGE_NAME=milepost-gcc-4.4.4
 cd ${INSTALL_DIR}
 
 # Set special vars
-if ["$LD_LIBRARY_PATH" -eq ""]
-then
+if [ "$LD_LIBRARY_PATH" == "" ] ; then
  export LD_LIBRARY_PATH=/usr/lib/${MACHINE}:/usr/lib/gcc/${MACHINE}/${GCC_VER}
 else
  LD_LIBRARY_PATH1=${LD_LIBRARY_PATH}
@@ -40,8 +39,7 @@ else
  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH1:/usr/lib/${MACHINE}:/usr/lib/gcc/${MACHINE}/${GCC_VER}
 fi
 
-if ["$LIBRARY_PATH" -eq ""]
-then
+if [ "$LIBRARY_PATH" == "" ] ; then
  export LIBRARY_PATH=/usr/lib/${MACHINE}:/usr/lib/gcc/${MACHINE}/${GCC_VER}
 else
  LIBRARY_PATH1=${LIBRARY_PATH}
