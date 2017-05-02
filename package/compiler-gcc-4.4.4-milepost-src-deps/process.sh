@@ -94,11 +94,10 @@ fi
 cd ${INSTALL_OBJ_DIR}
 
 ../${PACKAGE_NAME}/configure --prefix=${INSTALL_DIR} ${EXTRA_CFG} \
-                             --disable-multilib
-
-#                             --with-gmp=${CK_ENV_LIB_GMP} \
-#                             --with-mpfr=${CK_ENV_LIB_MPFR} \
-#                             --with-mpc=${CK_ENV_LIB_MPC}
+                             --disable-multilib \
+                             --with-gmp=${CK_ENV_LIB_GMP} \
+                             --with-mpfr=${CK_ENV_LIB_MPFR} \
+                             --with-mpc=${CK_ENV_LIB_MPC}
 
 #                             CFLAGS="-fgnu89-inline"
 # FGG had issues with 'cannot find crti.o: No such file or directory',

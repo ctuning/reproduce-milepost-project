@@ -7,9 +7,6 @@
     "compiler": {
       "local": "yes",
       "name": "C compiler",
-      "only_for_target_os_tags": [
-        "windows"
-      ],
       "sort": 10,
       "tags": "compiler,lang-c,milepost,gcc"
     }

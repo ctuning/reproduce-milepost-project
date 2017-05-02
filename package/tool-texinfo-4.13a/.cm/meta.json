@@ -1,7 +1,7 @@
 {
   "customize": {
     "extra_dir": "", 
-    "version": "4.13.a"
+    "version": "4.13"
   }, 
   "end_full_path": {
     "linux": "bin/info", 
