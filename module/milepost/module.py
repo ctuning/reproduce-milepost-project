@@ -38,6 +38,7 @@ ici1='ici_features_function.main.'
 ici2='ici_passes_function.main.txt'
 
 file_features='features.P'
+file_features_out='features.FT'
 
 ##############################################################################
 # Initialize module
@@ -150,7 +151,7 @@ def show(i):
     if r['return']>0: return r
 
     default_prog=r['string'].replace('\\r','').strip()
-    
+
     prog=i.get('program_sources','').replace('\\r','').strip()
     # Strange size, so save file and load it again
     rx=ck.gen_tmp_file({'prefix':'tmp-', 'suffix':'.tmp'})
@@ -168,7 +169,7 @@ def show(i):
        prog=default_prog
 
     y='width:600px;height:270px;'
-        
+
     x='<textarea name="program_sources" style="'+y+'">\n'
     x+=prog+'\n'
     x+='</textarea>\n'
@@ -491,7 +492,7 @@ def remote_xsb(i):
     # Load featlstn.P
     r=ck.load_text_file({'text_file':file_features})
     if r['return']>0: return r
-    fx=r['string'].split('\n')
+    fx=r['string']
 
     r=ck.access({'action':'remote_xsb_api',
                  'repo_uoa':er,
@@ -503,7 +504,7 @@ def remote_xsb(i):
     # Save output
     ft=r['output']
 
-    r=ck.save_text_file({'text_file':'features.FT', 'string':ft})
+    r=ck.save_text_file({'text_file':file_features_out, 'string':ft})
     if r['return']>0: return r
 
     return {'return':0}
@@ -536,7 +537,17 @@ def remote_xsb_api(i):
     cur_dir=os.getcwd()
 
     # Go to tmp dir
-    td=tempfile.gettempdir()
+    tdx=tempfile.gettempdir()
+
+    rx=ck.gen_tmp_file({'prefix':'tmp-ck-xsb-'})
+    if rx['return']>0: return rx
+    ftmp=rx['file_name']
+
+    td=os.path.join(rdx,ftmp)
+
+    if not os.path.isdir(td):
+       os.makedirs(td)
+
     os.chdir(td)
 
     # Save file
@@ -544,22 +555,24 @@ def remote_xsb_api(i):
     if r['return']>0: return r
 
     # Resolve deps on ctuning-cc-plugins
-    r=ck.access({'action':'set'
+    r=ck.access({'action':'set',
                  'module_uoa':cfg['module_deps']['env'],
                  'tags':'plugin,milepost,ctuning'})
     if r['return']>0: return r
 
-    # Generate tmp output
-    rx=ck.gen_tmp_file({'prefix':'tmp-', 'suffix':'.tmp'})
-    if rx['return']>0: return rx
-    ftmp=rx['file_name']
+    bat=r['bat']
+    prog=r['dict']['customize']['full_path']
 
-    ss='> '+ftmp
+    ss=bat+'\n'+prog
 
     os.system(ss)
 
-    r=ck.load_text_file({'text_file':ftmp, 'delete_after_read':'yes'})
+    r=ck.load_text_file({'text_file':file_features_out, 'delete_after_read':'yes'})
     if r['return']>0: return r
-    ft=r['string'].split('\n')
+    ft=r['string']
+
+    if os.path.isdir(td): 
+       shutil.rmtree(td)
+       time.sleep(1)
 
     return {'return':0, 'output':ft}
