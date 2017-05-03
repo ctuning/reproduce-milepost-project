@@ -68,7 +68,7 @@ Installation
 You may need to install dependencies. For example, on Ubunutu or Raspbian you need to install the following:
 
 ```
-$ sudo apt-get install build-essential automake autoconf libncurses-dev
+$ sudo apt-get install build-essential automake autoconf libncurses-dev libgmp-dev libmpfr-dev uuid-runtime
 ```
 
 On x86(64) Linux:
