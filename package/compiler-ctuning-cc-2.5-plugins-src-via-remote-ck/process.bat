@@ -18,10 +18,10 @@ echo.
 echo Copying package files ...
 
 cd /D %INSTALL_DIR%
-rem copy /B %PACKAGE_DIR%\%PACKAGE_NAME%-win.tar.bz2 .
-rem bzip2 -d %PACKAGE_NAME%-win.tar.bz2
-rem tar xvf %PACKAGE_NAME%-win.tar
-rem rm %PACKAGE_NAME%-win.tar
+copy /B %PACKAGE_DIR%\%PACKAGE_NAME%-win.tar.bz2 .
+bzip2 -d %PACKAGE_NAME%-win.tar.bz2
+tar xvf %PACKAGE_NAME%-win.tar
+rm %PACKAGE_NAME%-win.tar
 
 rem
 echo.

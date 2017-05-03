@@ -435,3 +435,75 @@ def dashboard(i):
     i['extra_url']='native_action=show&native_module_uoa=milepost'
 
     return ck.access(i)
+
+##############################################################################
+# access MILEPOST AI via unified CK JSON API
+
+def use_ai(i):
+    """
+    Input:  {
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+    """
+
+
+
+
+    return {'return':0}
+
+##############################################################################
+# access XSB remotely on devices with constraint memory
+
+def remote_xsb(i):
+    """
+    Input:  {
+               (input) - XSB input file
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+    """
+
+    import os
+
+    fi=i['input']
+    fo='features.FT'
+
+    rx=ck.gen_tmp_file({'prefix':'tmp-', 'suffix':'.tmp'})
+    if rx['return']>0: return rx
+    ftmp=rx['file_name']
+
+    os.system('D:\\!FGG\\Installations\\xsb-3.2-windows-64\\Xsb-3-2-7-Windows-Compiled\\bin\\xsb < '+fi+' > '+ftmp)
+
+    r=ck.load_text_file({'text_file':ftmp, 'delete_after_read':'yes'})
+    if r['return']>0: return r
+    x=r['string'].split('\n')
+
+    ft=''
+
+    m=''
+    n=''
+    for sx in x:
+        s=sx.strip().replace('\r','')
+        if s.startswith('M = '):
+           m=s[4:]
+        if s.startswith('N = '):
+           n=s[4:]
+
+           if ft!='': ft+=' , '
+           ft+=m+'='+n
+
+    r=ck.save_text_file({'text_file':fo, 'string':ft})
+    if r['return']>0: return r
+
+    return {'return':0}
