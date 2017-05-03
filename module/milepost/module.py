@@ -352,28 +352,42 @@ def show(i):
 #    h+='<button type="submit" name="action_reset">Reset</button>\n'
 #    h+='</center>\n'
 
-    scenario=i.get('scenario','')
-    if scenario=='': scenario='8289e0cf24346aa7'
-    i['scenario']=scenario
+    # If selected solution
+    smuoa=''
+    sduoa=''
+    for k in i:
+        if k.startswith('view_solution_'):
+           kk=k[14:]
+           j=kk.find('_')
+           if j>0:
+              smuoa=kk[:j]
+              sduoa=kk[j+1:]
 
-    ii={}
-    if not ar: ii=copy.deepcopy(i)
+    if smuoa=='' and sduoa=='':
+       scenario=i.get('scenario','')
+       if scenario=='': scenario='8289e0cf24346aa7'
+       i['scenario']=scenario
 
-    ii['action']='show'
-    ii['module_uoa']='program.optimization'
-    ii['widget']='yes'
-    ii['prepared_url0']=url0
-    ii['prepared_url1']=url1
-    ii['prepared_form_name']=form_name
-    ii['prepared_scenario_tags']='program-features'
+       ii={}
+       if not ar: ii=copy.deepcopy(i)
 
-    r=ck.access(ii)
-    if r['return']>0: return r
-     
-    results=r.get('results',[])
+       ii['action']='show'
+       ii['module_uoa']='program.optimization'
+       ii['widget']='yes'
+       ii['prepared_url0']=url0
+       ii['prepared_url1']=url1
+       ii['prepared_form_name']=form_name
+       ii['prepared_scenario_tags']='program-features'
 
-    h+='<p><hr>'+r.get('html','')
-    st+=r.get('style','')
+       r=ck.access(ii)
+       if r['return']>0: return r
+        
+       results=r.get('results',[])
+
+       h+='<p><hr>'+r.get('html','')
+       st+=r.get('style','')
+    else:
+       results=[{'module_uoa':smuoa, 'data_uoa':sduoa}]
 
     # Save a few vars to keep state
     if len(results)==1:
@@ -395,18 +409,6 @@ def show(i):
        st+=r.get('style','')
     else:
        h+='<br><a href="http://arxiv.org/abs/1506.06256"><img src="'+url0+'action=pull&common_action=yes&cid='+cfg['module_deps']['module']+':'+cfg['module_deps']['program.optimization']+'&filename=images/image-workflow1.png"></a><br>\n'
-
-
-
-
-
-
-
-
-
-
-
-
 
     return {'return':0, 'html':h, 'style':st}
 
