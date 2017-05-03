@@ -6,12 +6,15 @@
   "deps": {
     "compiler": {
       "local": "yes",
-      "name": "C compiler",
-      "only_for_target_os_tags": [
-        "windows"
-      ],
+      "name": "MILEPOST GCC compiler",
       "sort": 10,
-      "tags": "compiler,lang-c,milepost,gcc"
+      "tags": "compiler,lang-c,milepost"
+    },
+    "plugin-milepost-ctuning": {
+      "local": "yes", 
+      "name": "milepost ctuning plugins", 
+      "sort": 20, 
+      "tags": "plugin,milepost,ctuning"
     }
   },
   "end_full_path": {

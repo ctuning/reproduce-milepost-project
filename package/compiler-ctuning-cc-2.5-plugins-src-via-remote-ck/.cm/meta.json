@@ -1,46 +1,40 @@
 {
   "customize": {
-    "extra_dir": "", 
+    "extra_dir": "",
     "version": "2.5"
-  }, 
+  },
   "deps": {
     "compiler": {
       "local": "yes",
       "name": "C compiler",
       "sort": 10,
       "tags": "compiler,lang-c,milepost,gcc"
-    },
-    "xsb": {
-      "local": "yes", 
-      "name": "xsb compiler", 
-      "sort": 20, 
-      "tags": "compiler,xsb,lang-prolog"
     }
   },
   "end_full_path": {
-    "linux": "bin/ml-feat-proc", 
+    "linux": "bin/ml-feat-proc",
     "mingw": "bin\\ml-feat-proc.exe",
     "win": "bin\\ml-feat-proc.exe"
-  }, 
+  },
   "only_for_host_os_tags": [
     "linux",
     "windows"
-  ], 
+  ],
   "only_for_target_os_tags": [
     "linux",
     "windows",
     "mingw"
-  ], 
-  "process_script": "process", 
-  "soft_uoa": "585b44b38178af8c", 
-  "suggested_path": "plugin-milepost-ctuning", 
+  ],
+  "process_script": "process",
+  "soft_uoa": "585b44b38178af8c",
+  "suggested_path": "plugin-milepost-ctuning-remote",
   "tags": [
-    "plugin", 
-    "milepost", 
-    "ctuning", 
-    "features", 
-    "passes", 
-    "v2.5", 
+    "plugin",
+    "milepost",
+    "ctuning",
+    "features",
+    "passes",
+    "v2.5",
     "v2"
   ]
 }
