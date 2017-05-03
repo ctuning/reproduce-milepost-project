@@ -6,6 +6,10 @@
     "remote_xsb": {
       "desc": "access XSB remotely on devices with constraint memory"
     },
+    "remote_xsb_api": {
+      "desc": "XSB remote CK API",
+      "for_web": "yes"
+    },
     "show": {
       "desc": "render dashboard",
       "for_web": "yes"

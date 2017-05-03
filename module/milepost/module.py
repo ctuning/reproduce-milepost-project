@@ -37,6 +37,8 @@ prog_kernel_c='kernel.c'
 ici1='ici_features_function.main.'
 ici2='ici_passes_function.main.txt'
 
+file_features='features.P'
+
 ##############################################################################
 # Initialize module
 
@@ -474,36 +476,90 @@ def remote_xsb(i):
 
     """
 
+    # Setting output
+    o=i.get('out','')
+
+    er=i.get('exchange_repo','')
+    if er=='': er=ck.cfg['default_exchange_repo_uoa']
+    esr=i.get('exchange_subrepo','')
+    if esr=='': esr=ck.cfg['default_exchange_subrepo_uoa']
+
+    if i.get('local','')=='yes': 
+       er='local'
+       esr=''
+
+    # Load featlstn.P
+    r=ck.load_text_file({'text_file':file_features})
+    if r['return']>0: return r
+    fx=r['string'].split('\n')
+
+    r=ck.access({'action':'remote_xsb_api',
+                 'repo_uoa':er,
+                 'remote_repo_uoa':esr,
+                 'module_uoa':work['self_module_uid'],
+                 'input':fx})
+    if r['return']>0: return r
+
+    # Save output
+    ft=r['output']
+
+    r=ck.save_text_file({'text_file':'features.FT', 'string':ft})
+    if r['return']>0: return r
+
+    return {'return':0}
+
+##############################################################################
+# XSB remote CK API
+
+def remote_xsb_api(i):
+    """
+    Input:  {
+              input - input source 
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+               output - output features
+            }
+
+    """
+
     import os
+    import tempfile
 
     fi=i['input']
     fo='features.FT'
 
+    cur_dir=os.getcwd()
+
+    # Go to tmp dir
+    td=tempfile.gettempdir()
+    os.chdir(td)
+
+    # Save file
+    r=ck.save_text_file({'text_file':file_features, 'string':fi})
+    if r['return']>0: return r
+
+    # Resolve deps on ctuning-cc-plugins
+    r=ck.access({'action':'set'
+                 'module_uoa':cfg['module_deps']['env'],
+                 'tags':'plugin,milepost,ctuning'})
+    if r['return']>0: return r
+
+    # Generate tmp output
     rx=ck.gen_tmp_file({'prefix':'tmp-', 'suffix':'.tmp'})
     if rx['return']>0: return rx
     ftmp=rx['file_name']
 
-    os.system('D:\\!FGG\\Installations\\xsb-3.2-windows-64\\Xsb-3-2-7-Windows-Compiled\\bin\\xsb < '+fi+' > '+ftmp)
+    ss='> '+ftmp
+
+    os.system(ss)
 
     r=ck.load_text_file({'text_file':ftmp, 'delete_after_read':'yes'})
     if r['return']>0: return r
-    x=r['string'].split('\n')
+    ft=r['string'].split('\n')
 
-    ft=''
-
-    m=''
-    n=''
-    for sx in x:
-        s=sx.strip().replace('\r','')
-        if s.startswith('M = '):
-           m=s[4:]
-        if s.startswith('N = '):
-           n=s[4:]
-
-           if ft!='': ft+=' , '
-           ft+=m+'='+n
-
-    r=ck.save_text_file({'text_file':fo, 'string':ft})
-    if r['return']>0: return r
-
-    return {'return':0}
+    return {'return':0, 'output':ft}
