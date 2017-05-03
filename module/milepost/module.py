@@ -543,7 +543,7 @@ def remote_xsb_api(i):
     if rx['return']>0: return rx
     ftmp=rx['file_name']
 
-    td=os.path.join(rdx,ftmp)
+    td=os.path.join(tdx,ftmp)
 
     if not os.path.isdir(td):
        os.makedirs(td)
