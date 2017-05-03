@@ -530,6 +530,8 @@ def remote_xsb_api(i):
 
     import os
     import tempfile
+    import shutil
+    import time
 
     fi=i['input']
     fo='features.FT'
