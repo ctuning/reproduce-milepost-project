@@ -377,7 +377,7 @@ def show(i):
 
     # Save a few vars to keep state
     if len(results)==1:
-       # showing unique result
+       # showing unique result *****************************************************
        rr=results[0]
 
        muoa=rr['module_uoa']
@@ -386,7 +386,8 @@ def show(i):
        ii={'action':'html_viewer',
            'module_uoa':muoa,
            'data_uoa':duoa,
-           'url_base':url0}
+           'url_base':url0,
+           'features':features}
        r=ck.access(ii)
        if r['return']>0: return r
 
