@@ -76,16 +76,10 @@ echo "Configuring ..."
 # Needed for host GCC 5+
 export CFLAGS="-fgnu89-inline"
 
-XMACHINE=$(uname -m)
+MACHINE=$(uname -m)
 EXTRA_CFG=""
-
-#if [ "${RPI3}" == "YES" ] ; then
-# EXTRA_CFG="--with-cpu=cortex-a53 --with-fpu=neon-fp-armv8 --with-float=hard  --build=arm-linux-gnueabihf --host=arm-linux-gnueabihf --target=arm-linux-gnueabihf"
-# EXTRA_CFG="--build=arm-linux-gnueabihf --host=arm-linux-gnueabihf --target=arm-linux-gnueabihf"
-#fi
-
-if [ "${XMACHINE}" == "armv7l" ] || [ "${XMACHINE}" == "aarch64" ] ; then
- EXTRA_CFG="$EXTRA_CFG --enable-languages=c --disable-bootstrap \
+if [ "${MACHINE}" == "armv7l" ] || [ "${MACHINE}" == "aarch64" ] ; then
+ EXTRA_CFG=" --enable-languages=c --disable-bootstrap \
  --disable-libssp \
  --with-newlib \
  --disable-libgomp \
@@ -94,10 +88,6 @@ if [ "${XMACHINE}" == "armv7l" ] || [ "${XMACHINE}" == "aarch64" ] ; then
 else
  EXTRA_CFG=" --enable-languages=c,fortran"
 fi
-
-echo ""
-echo "* EXTRA_CFG = $EXTRA_CFG"
-echo ""
 
 cd ${INSTALL_OBJ_DIR}
 
