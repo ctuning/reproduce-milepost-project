@@ -15,9 +15,11 @@ ck=None # Will be updated by CK (initialized CK kernel)
 
 hextra='<i><center>\n'
 hextra+='This is a community-driven R&D: \n'
-hextra+=' [ <a href="https://en.wikipedia.org/wiki/Collective_Knowledge_(software)">CK wikipedia</a> , \n'
-hextra+=' <a href="https://en.wikipedia.org/wiki/MILEPOST_GCC">MILEPOST GCC</a> , \n'
-hextra+=' Vision papers (<a href="https://hal.archives-ouvertes.fr/inria-00436029">MILEPOST and cTuning</a> , \n'
+hextra+=' [ <a href="https://en.wikipedia.org/wiki/Collective_Knowledge_(software)">CK wiki</a> , \n'
+hextra+=' <a href="https://en.wikipedia.org/wiki/MILEPOST_GCC">MILEPOST GCC wiki</a> , \n'
+hextra+=' <a href="https://github.com/ctuning/reproduce-milepost-project">CK-MILEPOST GitHub</a> , \n'
+hextra+=' vision papers (<a href="https://hal.archives-ouvertes.fr/inria-00436029">cTuning</a> , \n'
+hextra+=' <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IwcnpkwAAAAJ&citation_for_view=IwcnpkwAAAAJ:LkGwnXOMwfcC">MILEPOST GCC</a> , \n'
 hextra+=' <a href="https://arxiv.org/abs/1506.06256">crowd-tuning</a>, \n'
 hextra+=' <a href="https://www.researchgate.net/publication/304010295_Collective_Knowledge_Towards_RD_Sustainability">CK</a>), \n'
 hextra+='<a href="https://www.youtube.com/watch?v=Q94yWxXUMP0">YouTube intro</a> ]<br> \n'
@@ -27,9 +29,6 @@ hextra+='<a href="http://cknowledge.org/repo/web.php?native_action=show&native_m
 hextra+='<a href="http://cknowledge.org/repo/web.php?native_action=show&native_module_uoa=program.optimization&scenario=2aaed4c520956635">LLVM</a> \n'
 
 hextra+='</center></i>\n'
-
-form_name='milepost_web_form'
-onchange='document.'+form_name+'.submit();'
 
 default_prog_uoa='sample-milepost-codelet'
 prog_kernel_c='kernel.c'
@@ -78,6 +77,8 @@ def show(i):
     import time
     import copy
 
+    form_name='milepost_web_form'
+
     # State: extract
     ae=False
     if 'action_extract' in i: ae=True
@@ -96,33 +97,40 @@ def show(i):
 #    h+='<h2>Aggregated results from Caffe crowd-benchmarking (time, accuracy, energy, cost, ...)</h2>\n'
 
     h+=hextra
-
-    # Check host URL prefix and default module/action
-    rx=ck.access({'action':'form_url_prefix',
-                  'module_uoa':'wfe',
-                  'host':i.get('host',''), 
-                  'port':i.get('port',''), 
-                  'template':i.get('template','')})
-    if rx['return']>0: return rx
-    url0=rx['url']
-    template=rx['template']
-
-    url=url0
-    action=i.get('action','')
-    muoa=i.get('module_uoa','')
-
     st=''
 
-    url+='action=index&module_uoa=wfe&native_action='+action+'&'+'native_module_uoa='+muoa
-    url1=url
+    if i.get('widget','')=='yes':
+       url0=i.get('prepared_url0','')
+       url1=i.get('prepared_url1','')
+       form_name=i.get('prepared_form_name','')
+    else:
+       # Check host URL prefix and default module/action
+       rx=ck.access({'action':'form_url_prefix',
+                     'module_uoa':'wfe',
+                     'host':i.get('host',''), 
+                     'port':i.get('port',''), 
+                     'template':i.get('template','')})
+       if rx['return']>0: return rx
+       url0=rx['url']
+       template=rx['template']
 
-    # Start form
-    r=ck.access({'action':'start_form',
-                 'module_uoa':cfg['module_deps']['wfe'],
-                 'url':url1,
-                 'name':form_name})
-    if r['return']>0: return r
-    h+=r['html']
+       url=url0
+       action=i.get('action','')
+       muoa=i.get('module_uoa','')
+
+       url+='action=index&module_uoa=wfe&native_action='+action+'&'+'native_module_uoa='+muoa
+       url1=url
+
+       # Start form
+       r=ck.access({'action':'start_form',
+                    'module_uoa':cfg['module_deps']['wfe'],
+                    'url':url1,
+                    'name':form_name})
+       if r['return']>0: return r
+       h+=r['html']
+
+    url=url0
+    onchange='document.'+form_name+'.submit();'
 
     # Header
     h+='<h2>Predict optimization using MILEPOST program features via CK (CK JSON API demo)</h2>\n'
@@ -445,7 +453,7 @@ def dashboard(i):
 ##############################################################################
 # access MILEPOST AI via unified CK JSON API
 
-def use_ai(i):
+def ask_ai(i):
     """
     Input:  {
             }
@@ -581,3 +589,23 @@ def remote_xsb_api(i):
        time.sleep(1)
 
     return {'return':0, 'output':ft}
+
+##############################################################################
+# unified CK-AI web API
+
+def ask_ai_web(i):
+    """
+    Input:  {
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+    """
+
+    r=show(i)
+
+    return r

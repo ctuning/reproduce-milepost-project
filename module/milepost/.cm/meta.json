@@ -1,5 +1,13 @@
 {
   "actions": {
+    "ask_ai": {
+      "desc": "access MILEPOST AI via unified CK JSON API",
+      "for_web": "yes"
+    },
+    "ask_ai_web": {
+      "desc": "use machine learning to predict compiler flags",
+      "for_web": "yes"
+    },
     "dashboard": {
       "desc": "open dashboard"
     },
@@ -12,10 +20,6 @@
     },
     "show": {
       "desc": "render dashboard",
-      "for_web": "yes"
-    },
-    "use_ai": {
-      "desc": "access MILEPOST AI via unified CK JSON API",
       "for_web": "yes"
     }
   },
@@ -33,5 +37,8 @@
     "program.optimization": "27bc42ee449e880e",
     "program.static.features": "92a02f0445148203",
     "wfe": "1e4e644996b7f2a0"
-  }
+  },
+  "tags": [
+    "ck-ai-json-web-api"
+  ]
 }
