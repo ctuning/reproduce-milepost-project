@@ -100,6 +100,11 @@ On RPi3 you can install it as following:
 $ ck install package:compiler-gcc-4.4.4-milepost-src-no-deps --env.RPI3=YES --env.PARALLEL_BUILDS=2
 $ ck install compiler-ctuning-cc-2.5-plugins-src-via-remote-ck
 
+Note that you may need to increase swap size on RPi3 before building GCC. 
+You can change "CONF_SWAPSIZE=100" in /etc/dphys-swapfile to "CONF_SWAPSIZE=1000".
+But don't forget to change it back after installation, 
+otherwise your SD card may die sooner.
+
 Usage
 =====
 
