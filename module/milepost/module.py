@@ -24,9 +24,9 @@ hextra+=' <a href="https://arxiv.org/abs/1506.06256">crowd-tuning</a>, \n'
 hextra+=' <a href="https://www.researchgate.net/publication/304010295_Collective_Knowledge_Towards_RD_Sustainability">CK</a>), \n'
 hextra+='<a href="https://www.youtube.com/watch?v=Q94yWxXUMP0">YouTube intro</a> ]<br> \n'
 
-hextra+='Optimizations results are continuously shared by volunteers across diverse programs, data sets and platforms: '
+hextra+='<br><i>Optimizations results are continuously shared by volunteers across diverse programs, data sets and platforms (also contributed by the community in the CK format): '
 hextra+='<a href="http://cknowledge.org/repo/web.php?native_action=show&native_module_uoa=program.optimization&scenario=8289e0cf24346aa7">GCC</a> , \n'
-hextra+='<a href="http://cknowledge.org/repo/web.php?native_action=show&native_module_uoa=program.optimization&scenario=2aaed4c520956635">LLVM</a> \n'
+hextra+='<a href="http://cknowledge.org/repo/web.php?native_action=show&native_module_uoa=program.optimization&scenario=2aaed4c520956635">LLVM</a></i> \n'
 
 hextra+='</center>\n'
 
