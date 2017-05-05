@@ -591,7 +591,7 @@ def remote_xsb_api(i):
     return {'return':0, 'output':ft}
 
 ##############################################################################
-# unified CK-AI web API
+# CK AI JSON API for web (needed to automatically find such function from higher-level CK AI API)
 
 def ask_ai_web(i):
     """
@@ -606,6 +606,4 @@ def ask_ai_web(i):
 
     """
 
-    r=show(i)
-
-    return r
+    return show(i)
