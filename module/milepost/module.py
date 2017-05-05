@@ -13,7 +13,7 @@ ck=None # Will be updated by CK (initialized CK kernel)
 
 # Local settings
 
-hextra='<i><center>\n'
+hextra='<center>\n'
 hextra+='This is a community-driven R&D: \n'
 hextra+=' [ <a href="https://en.wikipedia.org/wiki/Collective_Knowledge_(software)">CK wiki</a> , \n'
 hextra+=' <a href="https://en.wikipedia.org/wiki/MILEPOST_GCC">MILEPOST GCC wiki</a> , \n'
@@ -28,7 +28,7 @@ hextra+='Optimizations results are continuously shared by volunteers across dive
 hextra+='<a href="http://cknowledge.org/repo/web.php?native_action=show&native_module_uoa=program.optimization&scenario=8289e0cf24346aa7">GCC</a> , \n'
 hextra+='<a href="http://cknowledge.org/repo/web.php?native_action=show&native_module_uoa=program.optimization&scenario=2aaed4c520956635">LLVM</a> \n'
 
-hextra+='</center></i>\n'
+hextra+='</center>\n'
 
 default_prog_uoa='sample-milepost-codelet'
 prog_kernel_c='kernel.c'
