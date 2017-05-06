@@ -638,4 +638,9 @@ def show_json(i):
 
     """
 
-    return show(i)
+    r=show(i)
+
+    if 'html' in r: del(r['html'])
+    if 'style' in r: del(r['style'])
+
+    return r
