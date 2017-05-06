@@ -638,7 +638,4 @@ def show_json(i):
 
     """
 
-    r=show(i)
-    if r['return']>0: return r
-
-    return {'return':0, 'predicted_opt':r.get('predicted_opt','')}
+    return show(i)
