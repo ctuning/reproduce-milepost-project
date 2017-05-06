@@ -68,6 +68,8 @@ def show(i):
               return       - return code =  0, if successful
                                          >  0, if error
               (error)      - error text if return > 0
+
+              (predicted_opt) - MILEPOST prediction if features are provided and one configuration identified
             }
 
     """
@@ -78,6 +80,8 @@ def show(i):
     import copy
 
     form_name='milepost_web_form'
+
+    sh=i.get('skip_html','')
 
     # State: extract
     ae=False
@@ -95,6 +99,9 @@ def show(i):
     h+='\n\n<script language="JavaScript">function copyToClipboard (text) {window.prompt ("Copy to clipboard: Ctrl+C, Enter", text);}</script>\n\n' 
 
 #    h+='<h2>Aggregated results from Caffe crowd-benchmarking (time, accuracy, energy, cost, ...)</h2>\n'
+
+#    import json
+#    h+=json.dumps(i,sort_keys=True)
 
     h+=hextra
     st=''
@@ -335,7 +342,7 @@ def show(i):
     ml2=d.get('milepost_features_description',{})
     ml3=d.get('milepost_normalization_feature','')
 
-    h+='<hr><p><center><h3>MILEPOST features (main function)</h3>\n'
+    h+='<hr><p><center><h3><a href="http://ctuning.org/wiki/index.php/CTools:MilepostGCC:StaticFeatures:MILEPOST_V2.1">MILEPOST features</a> (main function)</h3>\n'
 
     h+='<table border="1" cellpadding="5" cellspacing="0">\n'
     h+=' <tr><td><b>Feature</b></td><td><b>Description</b></td></tr>\n'
@@ -398,6 +405,7 @@ def show(i):
        results=[{'module_uoa':smuoa, 'data_uoa':sduoa}]
 
     # Save a few vars to keep state
+    popt=''
     if len(results)==1:
        # showing unique result *****************************************************
        rr=results[0]
@@ -413,12 +421,18 @@ def show(i):
        r=ck.access(ii)
        if r['return']>0: return r
 
+       popt=r.get('predicted_opt','')
+
        h+='<p>'+r.get('html','')
        st+=r.get('style','')
     else:
        h+='<br><a href="http://arxiv.org/abs/1506.06256"><img src="'+url0+'action=pull&common_action=yes&cid='+cfg['module_deps']['module']+':'+cfg['module_deps']['program.optimization']+'&filename=images/image-workflow1.png"></a><br>\n'
 
-    return {'return':0, 'html':h, 'style':st}
+    if sh=='yes':
+       h=''
+       st=''
+
+    return {'return':0, 'html':h, 'style':st, 'predicted_opt':popt}
 
 ##############################################################################
 # make safe strings for CMD ...
