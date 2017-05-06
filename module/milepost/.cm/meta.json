@@ -21,6 +21,10 @@
     "show": {
       "desc": "render dashboard",
       "for_web": "yes"
+    },
+    "show_json": {
+      "desc": "return json instead of HTML",
+      "for_web": "yes"
     }
   },
   "copyright": "See CK COPYRIGHT.txt for copyright details",
