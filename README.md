@@ -143,17 +143,3 @@ If you have problems, questions or suggestions, do not hesitate to get in touch
 via the following mailing lists:
 * https://groups.google.com/forum/#!forum/collective-knowledge
 * https://groups.google.com/forum/#!forum/ctuning-discussions
-
-Support
-=======
-The [non-profit cTuning foundation (France)](http://cTuning.org)
-and [dividiti Ltd (UK/US)](http://dividiti.com)
-help academic and industrial projects to use
-[Collective Knowledge framework (CK)] and implement sustainable
-research software, share artifacts and workflows as reusable and
-customizable components, crowdsource and reproduce experiments,
-enable [collaborative AI/SW/HW co-design from IoT to supercomputers](http://cKnowledge.org/ai)
-to trade-off speed, accuracy, energy, size and costs,
-accelerate knowledge discovery, and facilitate technology transfer.
-Contact [them](mailto:grigori.fursin@ctuning.org;anton@dividiti.com) 
-for further details.
