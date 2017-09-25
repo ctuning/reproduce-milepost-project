@@ -13,12 +13,9 @@ Note that it becomes increasingly hard to rebuild MILEPOST GCC on latest Linux.
 This project was used as a proof-of-concept and we would like to develop similar feature extractors
 at different abstraction levels inside the latest clang 3.7+ or GCC 6+ compiler - any help will be appreciated!
 
-We would also like to add a Docker image for this project at some point.
-
 Prerequisites
 =============
 * Collective Knowledge Framework: http://github.com/ctuning/ck
-* m4 (sudo apt-get install m4)
 
 Publications
 ============
@@ -68,72 +65,110 @@ License
 =======
 * GPLv2
 
-Installation
-============
 
-You may need to install dependencies. For example, on Ubuntu or Raspbian you need to install the following:
+Trying MILEPOST GCC using Docker image with Ubuntu 16.04
+========================================================
+
+You can get and try pre-installed MILEPOST GCC and cTuning CC as following:
+```
+$ (sudo) docker run -it ctuning/ck-milepost-gcc-ubuntu16.04
+$ cd `ck find demo:ctuning-cc`
+$ ./_use_ctuning_cc_directly_extract_features.sh
+```
+
+Native installation
+===================
+
+Based on the community feedback we list the following Linux dependencies required to natively build MILEPOST GCC:
 
 ```
-$ sudo apt-get install build-essential automake autoconf libncurses-dev libgmp-dev libmpfr-dev uuid-runtime
+$ sudo apt-get update && apt-get install -y python-all git bzip2 sudo wget zip
+$ sudo pip install ck
+$ sudo apt-get install -y libjpeg8 libjpeg62-dev libfreetype6 libfreetype6-dev python-pillow
+$ sudo apt-get install -y build-essential automake autoconf libncurses-dev uuid-runtime m4
+$ sudo apt-get install -y gcc g++ g++-multilib libc6-dev-i386
+$ sudo apt-get install -y texinfo libisl-dev libcloog-isl-dev libmpc-dev libgmp-dev libmpfr-dev
 ```
 
-On x86(64) Linux:
+== Linux x86(64) ==
 
 ```
 $ ck pull repo:reproduce-milepost-project
+$ ck install package:compiler-gcc-4.4.4-milepost-src-deps
+$ ck install package:compiler-ctuning-cc-2.5-plugins-src
 $ ck install package:compiler-ctuning-cc-2.5-src
+
 ```
 
 This should install MILEPOST GCC, plugins and ctuning-cc wrapper.
 
+== Raspberry Pi and mobile devices ==
+
 If you have a limited memory on your device (such as Raspberry Pi), install MILEPOST GCC first as following:
 ```
-$ ck install package:compiler-gcc-4.4.4-milepost-src-no-deps --env.PARALLEL_BUILDS=2
-```
-
-You can install MILEPOST GCC on Windows as following:
-```
-$ ck install package:compiler-gcc-4.4.4-milepost-src-no-deps
-```
-or 
-```
-$ ck install package:compiler-gcc-4.4.4-milepost-src-no-deps --target=mingw-64
-```
-
-On RPi3 you can install it as following:
-```
+$ ck pull repo:reproduce-milepost-project
 $ ck install package:compiler-gcc-4.4.4-milepost-src-no-deps --env.RPI3=YES --env.PARALLEL_BUILDS=2
-$ ck install compiler-ctuning-cc-2.5-plugins-src-via-remote-ck
+$ ck install package:compiler-ctuning-cc-2.5-plugins-src-via-remote-ck
+$ ck install compiler-ctuning-cc-2.5-src
+```
 
 Note that you may need to increase swap size on RPi3 before building GCC. 
 You can change "CONF_SWAPSIZE=100" in /etc/dphys-swapfile to "CONF_SWAPSIZE=1000".
 But don't forget to change it back after installation, 
 otherwise your SD card may die sooner.
 
+== Windows ==
+
+You can install MILEPOST GCC on Windows as following:
+```
+$ ck pull repo:reproduce-milepost-project
+$ ck install package:compiler-gcc-4.4.4-milepost-src-no-deps
+$ ck install package:compiler-ctuning-cc-2.5-plugins-src
+$ ck install compiler-ctuning-cc-2.5-src
+```
+or 
+```
+$ ck pull repo:reproduce-milepost-project
+$ ck install package:compiler-gcc-4.4.4-milepost-src-no-deps --target=mingw-64
+$ ck install package:compiler-ctuning-cc-2.5-plugins-src
+$ ck install compiler-ctuning-cc-2.5-src
+```
+
 Usage
 =====
 
-You can now install ctuning-cc wrapper for MILEPOST GCC:
-``
- $ ck install compiler-ctuning-cc-2.5-src
+Then you can check demo scripts to extract features 
+from your own program in the following CK entry:
 ```
-
-Then you can check demo scripts to extract features from your own program
-in the following CK entry:
-```
-$ ck find demo:ctuning-cc
+$ cd `ck find demo:ctuning-cc`
 ```
 
 You can try two self-descriptive scripts:
-* _use_ctuning_cc_directly_extract_features.sh
-* _use_ctuning_cc_directly_extract_features_rpi3.sh
+```
+$ ./_use_ctuning_cc_directly_extract_features.sh
+$ ./_use_ctuning_cc_directly_extract_features_rpi3.sh
 
-* _use_ctuning_cc_via_ck_pipeline.sh
-* _use_ctuning_cc_via_ck_pipeline_rpi3.sh
+$ ./_use_ctuning_cc_via_ck_pipeline.sh
+$ ./_use_ctuning_cc_via_ck_pipeline_rpi3.sh
+```
 
 You can also try MILEPOST GCC demo via interactive CK dashboard:
 ```
 $ ck dashboard milepost
+```
+
+Docker
+======
+We added Dockerfile to let you customize and build your own MILEPOST GCC Docker instances.
+You can find this file in the following entry:
+```
+$ cd `ck find docker:ck-milepost-gcc-ubuntu16.04
+```
+
+You can build and run this image as following:
+```
+$ ck build docker:ck-milepost-gcc-ubuntu16.04 (--sudo)
+$ ck run docker:ck-milepost-gcc-ubuntu16.04 (--sudo)
 ```
 
 Feedback
