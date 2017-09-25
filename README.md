@@ -90,7 +90,7 @@ $ sudo apt-get install -y gcc g++ g++-multilib libc6-dev-i386
 $ sudo apt-get install -y texinfo libisl-dev libcloog-isl-dev libmpc-dev libgmp-dev libmpfr-dev
 ```
 
-== Linux x86(64) ==
+## Linux x86(64)
 
 ```
 $ ck pull repo:reproduce-milepost-project
@@ -102,7 +102,7 @@ $ ck install package:compiler-ctuning-cc-2.5-src
 
 This should install MILEPOST GCC, plugins and ctuning-cc wrapper.
 
-== Raspberry Pi and mobile devices ==
+## Raspberry Pi and mobile devices
 
 If you have a limited memory on your device (such as Raspberry Pi), install MILEPOST GCC first as following:
 ```
@@ -117,7 +117,7 @@ You can change "CONF_SWAPSIZE=100" in /etc/dphys-swapfile to "CONF_SWAPSIZE=1000
 But don't forget to change it back after installation, 
 otherwise your SD card may die sooner.
 
-== Windows ==
+## Windows
 
 You can install MILEPOST GCC on Windows as following:
 ```
