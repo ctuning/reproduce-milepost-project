@@ -97,10 +97,16 @@ $ ck pull repo:reproduce-milepost-project
 $ ck install package:compiler-gcc-4.4.4-milepost-src-deps
 $ ck install package:compiler-ctuning-cc-2.5-plugins-src
 $ ck install package:compiler-ctuning-cc-2.5-src
-
 ```
 
 This should install MILEPOST GCC, plugins and ctuning-cc wrapper.
+
+If it fails, you may try to install another package that does not recompile dependencies (such as GMP, MPFR, etc):
+
+```
+$ ck install package:compiler-gcc-4.4.4-milepost-src-no-deps
+
+```
 
 ## Raspberry Pi and mobile devices
 
