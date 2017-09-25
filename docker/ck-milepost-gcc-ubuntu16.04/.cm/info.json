@@ -1,0 +1,16 @@
+{
+  "backup_data_uid": "45c22d61b5c42028", 
+  "backup_module_uid": "88eef0cd8c43b68a", 
+  "backup_module_uoa": "docker", 
+  "control": {
+    "engine": "CK", 
+    "iso_datetime": "2017-09-25T16:02:56.101116", 
+    "version": [
+      "1", 
+      "9", 
+      "1", 
+      "1"
+    ]
+  }, 
+  "data_name": "ck-milepost-gcc"
+}

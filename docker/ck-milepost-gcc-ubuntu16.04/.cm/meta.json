@@ -1,0 +1,9 @@
+{
+  "cmd": {
+    "default": {
+      "build": "-t $#CK_DOCKER_ORGANIZATION#$/$#CK_DOCKER_NAME#$ $#CK_PATH#$",
+      "push": "$#CK_DOCKER_ORGANIZATION#$/$#CK_DOCKER_NAME#$", 
+      "run": "--rm -it $#CK_DOCKER_ORGANIZATION#$/$#CK_DOCKER_NAME#$"
+    }
+  }
+}

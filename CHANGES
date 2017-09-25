@@ -1,3 +1,5 @@
+* 2017.09.25 - added Docker image to build MILEPOST GCC and cTuning CC on Ubuntu 16.04
+
 * 2017.05.01 - added support for Windows and partially for RPi3
 
 * 2016.11.22 - fixing dependencies (m4) and version detecton of texinfo (thanks to C ANIL Reddy)
