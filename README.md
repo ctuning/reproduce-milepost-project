@@ -13,6 +13,9 @@ Note that it becomes increasingly hard to rebuild MILEPOST GCC on latest Linux.
 This project was used as a proof-of-concept and we would like to develop similar feature extractors
 at different abstraction levels inside the latest clang 3.7+ or GCC 6+ compiler - any help will be appreciated!
 
+See reproducible and interactive ArXiv'18 article "A Collective Knowledge workflow for collaborative research 
+into multi-objective autotuning and machine learning techniques" featuring MILEPOST GCC: [link](http://cKnowledge.org/rpi-crowd-tuning).
+
 Prerequisites
 =============
 * Collective Knowledge Framework: http://github.com/ctuning/ck
