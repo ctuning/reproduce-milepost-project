@@ -72,7 +72,7 @@ License
 Trying MILEPOST GCC using Docker image with Ubuntu 16.04
 ========================================================
 
-You can get and try pre-installed MILEPOST GCC and cTuning CC as following:
+You can get and try pre-installed MILEPOST GCC and cTuning CC as follows:
 ```
 $ (sudo) docker run -it ctuning/ck-milepost-gcc-ubuntu16.04
 $ cd `ck find demo:ctuning-cc`
@@ -113,7 +113,7 @@ $ ck install package:compiler-gcc-4.4.4-milepost-src-no-deps
 
 ## Raspberry Pi and mobile devices
 
-If you have a limited memory on your device (such as Raspberry Pi), install MILEPOST GCC first as following:
+If you have a limited memory on your device (such as Raspberry Pi), install MILEPOST GCC first as follows:
 ```
 $ ck pull repo:reproduce-milepost-project
 $ ck install package:compiler-gcc-4.4.4-milepost-src-no-deps --env.RPI3=YES --env.PARALLEL_BUILDS=2
@@ -128,7 +128,7 @@ otherwise your SD card may die sooner.
 
 ## Windows
 
-You can install MILEPOST GCC on Windows as following:
+You can install MILEPOST GCC on Windows as follows:
 ```
 $ ck pull repo:reproduce-milepost-project
 $ ck install package:compiler-gcc-4.4.4-milepost-src-no-deps
@@ -174,7 +174,7 @@ You can find this file in the following entry:
 $ cd `ck find docker:ck-milepost-gcc-ubuntu16.04
 ```
 
-You can build and run this image as following:
+You can build and run this image as follows:
 ```
 $ ck build docker:ck-milepost-gcc-ubuntu16.04 (--sudo)
 $ ck run docker:ck-milepost-gcc-ubuntu16.04 (--sudo)
