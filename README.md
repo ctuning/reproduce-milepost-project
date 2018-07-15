@@ -9,6 +9,8 @@ Status
 Relatively stable. We mainly use MILEPOST GCC now to extract 
 semantic program features for compatibility with previous models.
 
+We strongly suggest you to read this [CK getting started guide](https://github.com/ctuning/ck/wiki/First-Feeling) first!
+
 Note that it becomes increasingly hard to rebuild MILEPOST GCC on latest Linux. 
 This project was used as a proof-of-concept and we would like to develop similar feature extractors
 at different abstraction levels inside the latest clang 3.7+ or GCC 6+ compiler - any help will be appreciated!
@@ -168,6 +170,14 @@ $ ./_use_ctuning_cc_directly_extract_features_rpi3.sh
 
 $ ./_use_ctuning_cc_via_ck_pipeline.sh
 $ ./_use_ctuning_cc_via_ck_pipeline_rpi3.sh
+```
+
+You can use MILEPOST GCC via virtual CK environment:
+```
+$ ck show env
+$ ck virtual env --tags=compiler,milepost,gcc
+$ which gcc
+$ gcc --version
 ```
 
 You can also try MILEPOST GCC demo via interactive CK dashboard:
