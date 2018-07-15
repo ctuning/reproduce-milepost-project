@@ -88,7 +88,7 @@ if [ "${MACHINE}" == "armv7l" ] || [ "${MACHINE}" == "aarch64" ] ; then
  --disable-libmudflap \
  --disable-threads"
 else
- EXTRA_CFG=" --enable-languages=c,fortran"
+ EXTRA_CFG=" --enable-languages=${ENABLE_LANGUAGES}"
 fi
 
 cd ${INSTALL_OBJ_DIR}

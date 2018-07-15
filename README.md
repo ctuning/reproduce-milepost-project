@@ -111,6 +111,15 @@ $ ck install package:compiler-gcc-4.4.4-milepost-src-no-deps
 
 ```
 
+Note that by default we install GCC with C and Fortran support. 
+If you need C++, you should install the following package:
+```
+$ ck install package:compiler-gcc-4.4.4-milepost-with-cxx-src-deps
+ or
+$ ck install package:compiler-gcc-4.4.4-milepost-src-deps --env.ENABLE_LANGUAGES=c,c++,fortran
+
+```
+
 ## Raspberry Pi and mobile devices
 
 If you have a limited memory on your device (such as Raspberry Pi), install MILEPOST GCC first as follows:
