@@ -2,7 +2,7 @@
   "customize": {
     "add_m32": "no",
     "install_env": {
-      "ENABLE_LANGUAGES": "c,c++,gfortran", 
+      "ENABLE_LANGUAGES": "c,c++,gfortran"
     },
     "bugfix1": "yes",
     "extra_dir": "",

@@ -1,7 +1,7 @@
 {
   "customize": {
     "install_env": {
-      "ENABLE_LANGUAGES": "c,fortran", 
+      "ENABLE_LANGUAGES": "c,fortran" 
     },
     "add_m32": "no", 
     "bugfix1": "yes", 
