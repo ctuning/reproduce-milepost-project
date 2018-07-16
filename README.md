@@ -43,6 +43,19 @@ Publications
    keywords = {machine learning compiler, self-tuning compiler, adaptive compiler, automatic performance tuning, machine learning, program characterization, program features, collective optimization, continuous optimization, multi-objective optimization, empirical performance tuning, optimization repository, iterative compilation, feedback-directed compilation, adaptive compilation, optimization prediction, portable optimization}
 }
 
+@inproceedings{cm:29db2248aba45e59:c4b24bff57f4ad07,
+   author = {{Fursin, Grigori and Lokhmotov, Anton and Savenko, Dmitry and Upton, Eben}},
+    title = "{A Collective Knowledge workflow for collaborative research into multi-objective autotuning and machine learning techniques}",
+  journal = {ArXiv e-prints}, 
+ archivePrefix = "arXiv",
+   eprint = {1801.08024},
+ primaryClass = "cs.CY",
+ keywords = {Computer Science - Computers and Society, Computer Science - Software Engineering},
+     year = 2018,
+    month = jan,
+    url = {http://cknowledge.org/repo/web.php?wcid=report:rpi3-crowd-tuning-2017-interactive}
+}
+
 @inproceedings{Fur2009,
   author =    {Grigori Fursin},
   title =     {{Collective Tuning Initiative}: automating and accelerating development and optimization of computing systems},
@@ -154,8 +167,8 @@ $ ck install package:compiler-ctuning-cc-2.5-plugins-src
 $ ck install compiler-ctuning-cc-2.5-src
 ```
 
-Usage
-=====
+Low level usage
+===============
 
 Then you can check demo scripts to extract features 
 from your own program in the following CK entry:
@@ -183,6 +196,49 @@ $ gcc --version
 You can also try MILEPOST GCC demo via interactive CK dashboard:
 ```
 $ ck dashboard milepost
+```
+
+Note that these are low-level components which are intended 
+to be integrated with high-level workflows.
+
+High level usage (CK workflows)
+===============================
+
+We integrated extraction of MILEPOST features with a "high-level" CK program pipeline.
+You can extract MILEPOST features from any [CK program](http://cKnowledge.org/shared-programs.html), 
+for example "cbench-automotive-susan" as follows:
+
+```
+$ ck pull repo:ctuning-programs
+$ ck benchmark program:cbench-automotive-susan --speed --milepost --no_run --milepost_out_file=extracted-features.json
+
+$ cd `ck find program:cbench-automotive-susan`
+$ cd tmp
+$ cat extracted-features.json
+```
+
+You can also use "features" key in the output of the CK program in your own CK workflows 
+(similar to how we use it in this [RPi crowd-tuning project](http://cKnowledge.org/rpi-crowd-tuning)) 
+as follows:
+```
+import ck.kernel as ck
+
+r=ck.access({'action':'benchmark',
+             'module_uoa':'program',
+             'data_uoa':'cbench-automotive-susan',
+             'speed':'yes',
+             'milepost':'yes',
+             'no_run':'yes',
+             'out':'con'})
+if r['return']>0: ck.err(r)
+
+ck.debug_out(r)
+```
+
+You can quickly add your own CK program using templates as described 
+[here](https://github.com/ctuning/ck/wiki/Adding-new-workflows):
+```
+$ ck add program:my-new-program
 ```
 
 Docker
