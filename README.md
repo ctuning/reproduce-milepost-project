@@ -189,8 +189,13 @@ You can use MILEPOST GCC via virtual CK environment:
 ```
 $ ck show env
 $ ck virtual env --tags=compiler,milepost,gcc
-$ which gcc
-$ gcc --version
+
+Warning: you are in a new shell with a pre-set CK environment. Enter "exit" to return to the original one!
+
+> ${CK_ENV_COMPILER_GCC_BIN}/gcc --version
+
+gcc (GCC) 4.4.4
+
 ```
 
 You can also try MILEPOST GCC demo via interactive CK dashboard:
