@@ -210,7 +210,7 @@ for example "cbench-automotive-susan" as follows:
 
 ```
 $ ck pull repo:ctuning-programs
-$ ck benchmark program:cbench-automotive-susan --speed --milepost --no_run --milepost_out_file=extracted-features.json
+$ ck pipeline program:cbench-automotive-susan --speed --milepost --no_run --milepost_out_file=extracted-features.json
 
 $ cd `ck find program:cbench-automotive-susan`
 $ cd tmp
@@ -223,7 +223,7 @@ as follows:
 ```
 import ck.kernel as ck
 
-r=ck.access({'action':'benchmark',
+r=ck.access({'action':'pipeline',
              'module_uoa':'program',
              'data_uoa':'cbench-automotive-susan',
              'speed':'yes',
