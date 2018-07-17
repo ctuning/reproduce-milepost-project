@@ -9,7 +9,7 @@ Status
 Relatively stable. We mainly use MILEPOST GCC now to extract 
 semantic program features for compatibility with previous models.
 
-We strongly suggest you to read this [CK getting started guide](https://github.com/ctuning/ck/wiki/First-Feeling) first!
+We strongly suggest you to read this [getting started guide](https://github.com/ctuning/ck/wiki/First-steps) first!
 
 Note that it becomes increasingly hard to rebuild MILEPOST GCC on latest Linux. 
 This project was used as a proof-of-concept and we would like to develop similar feature extractors
