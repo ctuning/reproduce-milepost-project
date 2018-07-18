@@ -249,6 +249,8 @@ $ ck add program:my-new-program
 Notes
 =====
 
+## Using 1 process to extract MILEPOST features
+
 Note that you currently can't use multiple instances of MILEPOST GCC to extract features from multiple files in parallel
 (see related issue [#6](https://github.com/ctuning/reproduce-milepost-project/issues/6)). 
 Therefore, if you use makefile to extract features, set 1 process as follows:
@@ -256,6 +258,17 @@ Therefore, if you use makefile to extract features, set 1 process as follows:
 $ make -j1
 ```
 
+## Extracting MILEPOST features from MPI programs
+
+See ticket [#7](https://github.com/ctuning/reproduce-milepost-project/issues/7):
+
+1. copy system mpicc to my local directory $HOME/benchmark. (because I want to modify it, but I do not have root access)
+2. modify local copy mpicc, replace CC=gcc to CC=$(CK_CC)
+3. export PATH=$HOME/benchmark:$PATH.
+
+Then check other tickets [4](https://github.com/ctuning/reproduce-milepost-project/issues/4),
+[5](Then check other tickets [4](https://github.com/ctuning/reproduce-milepost-project/issues/5),
+[6](https://github.com/ctuning/reproduce-milepost-project/issues/6).
 
 Docker
 ======
