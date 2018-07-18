@@ -250,7 +250,8 @@ Notes
 =====
 
 Note that you currently can't use multiple instances of MILEPOST GCC to extract features from multiple files in parallel
-(see related issue #6). Therefore, if you use makefile to extract features, set 1 process as follows:
+(see related issue [#6](https://github.com/ctuning/reproduce-milepost-project/issues/6)). 
+Therefore, if you use makefile to extract features, set 1 process as follows:
 ```
 $ make -j1
 ```
