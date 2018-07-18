@@ -246,6 +246,16 @@ You can quickly add your own CK program using templates as described
 $ ck add program:my-new-program
 ```
 
+Notes
+=====
+
+Note that you currently can't use multiple instances of MILEPOST GCC to extract features from multiple files in parallel
+(see related issue #6). Therefore, if you use makefile to extract features, set 1 process as follows:
+```
+$ make -j1
+```
+
+
 Docker
 ======
 We added Dockerfile to let you customize and build your own MILEPOST GCC Docker instances.
