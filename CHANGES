@@ -1,3 +1,5 @@
+* 2018.09.25 - fixed bug reported in https://github.com/ctuning/ck-env/issues/77
+
 * 2018.07.15 - added ENABLE_LANGUAGES variable and package:compiler-gcc-4.4.4-milepost-with-cxx-src-deps
 
 * 2017.09.25 - added Docker image to build MILEPOST GCC and cTuning CC on Ubuntu 16.04

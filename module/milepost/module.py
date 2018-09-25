@@ -265,9 +265,14 @@ def show(i):
           # Create dummy copy
           dprog['compiler_env']='CK_'+plang
 
-          r=ck.access({'action':'add',
-                       'module_uoa':cfg['module_deps']['program'],
-                       'dict':dprog})
+          ii={'action':'add',
+              'module_uoa':cfg['module_deps']['program'],
+              'dict':dprog}
+          rlru=ck.cfg.get('record_local_repo_uoa','')
+          if rlru!='':
+             ii['repo_uoa']=rlru
+
+          r=ck.access(ii)
           if r['return']>0: return r
           prog_uid=r['data_uid']
           prog_path=r['path']
