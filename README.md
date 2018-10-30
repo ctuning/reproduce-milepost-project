@@ -275,7 +275,7 @@ Docker
 We added Dockerfile to let you customize and build your own MILEPOST GCC Docker instances.
 You can find this file in the following entry:
 ```
-$ cd `ck find docker:ck-milepost-gcc-ubuntu16.04
+$ cd `ck find docker:ck-milepost-gcc-ubuntu16.04`
 ```
 
 You can build and run this image as follows:
