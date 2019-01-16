@@ -1,39 +1,39 @@
 {
   "customize": {
-    "extra_dir": "", 
+    "extra_dir": "",
     "version": "0.9"
-  }, 
+  },
   "deps": {
     "lib-gmp": {
-      "local": "yes", 
-      "name": "GMP library", 
-      "sort": 10, 
+      "local": "yes",
+      "name": "GMP library",
+      "sort": 10,
       "tags": "lib,gmp"
-    }, 
+    },
     "lib-mpfr": {
-      "local": "yes", 
-      "name": "MPFR library", 
-      "sort": 20, 
+      "local": "yes",
+      "name": "MPFR library",
+      "sort": 20,
       "tags": "lib,mpfr"
     }
-  }, 
+  },
   "end_full_path": {
-    "linux": "lib/libmpc.a", 
+    "linux": "lib/libmpc.a",
     "mingw": "lib\\libmpc.a"
-  }, 
+  },
   "only_for_host_os_tags": [
     "linux"
-  ], 
+  ],
   "only_for_target_os_tags": [
     "linux"
-  ], 
-  "process_script": "process", 
-  "soft_uoa": "067e4f40badd4223", 
-  "suggested_path": "mpc", 
+  ],
+  "process_script": "process",
+  "soft_uoa": "067e4f40badd4223",
+  "suggested_path": "mpc",
   "tags": [
-    "lib", 
-    "mpc", 
-    "v0.9", 
+    "lib",
+    "mpc",
+    "v0.9",
     "v0"
   ]
 }

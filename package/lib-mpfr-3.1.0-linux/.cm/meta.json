@@ -1,33 +1,33 @@
 {
   "customize": {
-    "extra_dir": "", 
+    "extra_dir": "",
     "version": "3.1.0"
-  }, 
+  },
   "deps": {
     "lib-gmp": {
-      "local": "yes", 
-      "name": "GMP library", 
+      "local": "yes",
+      "name": "GMP library",
       "tags": "lib,gmp"
     }
-  }, 
+  },
   "end_full_path": {
-    "linux": "lib/libmpfr.a", 
+    "linux": "lib/libmpfr.a",
     "mingw": "lib\\libmpfr.a"
-  }, 
+  },
   "only_for_host_os_tags": [
     "linux"
-  ], 
+  ],
   "only_for_target_os_tags": [
     "linux"
-  ], 
-  "process_script": "process", 
-  "soft_uoa": "b212226b44799964", 
-  "suggested_path": "mpfr", 
+  ],
+  "process_script": "process",
+  "soft_uoa": "b212226b44799964",
+  "suggested_path": "mpfr",
   "tags": [
-    "lib", 
-    "mpfr", 
-    "v3.1.0", 
-    "v3.1", 
+    "lib",
+    "mpfr",
+    "v3.1.0",
+    "v3.1",
     "v3"
   ]
 }

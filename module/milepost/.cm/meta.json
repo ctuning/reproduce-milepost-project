@@ -44,5 +44,7 @@
   },
   "tags": [
     "ck-ai-json-web-api"
-  ]
+  ],
+  "workflow": "yes",
+  "workflow_type": "MILEPOST GCC basic pipeline"
 }

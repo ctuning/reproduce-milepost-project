@@ -1,11 +1,11 @@
 {
   "customize": {
     "add_m32": "no",
+    "bugfix1": "yes",
+    "extra_dir": "",
     "install_env": {
       "ENABLE_LANGUAGES": "c,c++,fortran"
     },
-    "bugfix1": "yes",
-    "extra_dir": "",
     "retarget": "no",
     "tool_prefix_configured": "yes",
     "version": "4.4.4"
@@ -64,7 +64,7 @@
     "v4"
   ],
   "use_scripts_from_another_entry": {
-    "module_uoa": "package",
-    "data_uoa": "90da0e74d7477233"
+    "data_uoa": "90da0e74d7477233",
+    "module_uoa": "package"
   }
 }

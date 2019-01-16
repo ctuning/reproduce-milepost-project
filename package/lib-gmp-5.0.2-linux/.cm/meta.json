@@ -1,26 +1,26 @@
 {
   "customize": {
-    "extra_dir": "", 
+    "extra_dir": "",
     "version": "5.0.2"
-  }, 
+  },
   "end_full_path": {
-    "linux": "lib/libgmp.a", 
+    "linux": "lib/libgmp.a",
     "mingw": "lib\\libgmp.a"
-  }, 
+  },
   "only_for_host_os_tags": [
     "linux"
-  ], 
+  ],
   "only_for_target_os_tags": [
     "linux"
-  ], 
-  "process_script": "process", 
-  "soft_uoa": "ed501fa9004a6cb6", 
-  "suggested_path": "gmp", 
+  ],
+  "process_script": "process",
+  "soft_uoa": "ed501fa9004a6cb6",
+  "suggested_path": "gmp",
   "tags": [
-    "lib", 
-    "gmp", 
-    "v5.0.2", 
-    "v5.0", 
+    "lib",
+    "gmp",
+    "v5.0.2",
+    "v5.0",
     "v5"
   ]
 }

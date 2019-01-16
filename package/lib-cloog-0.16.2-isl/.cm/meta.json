@@ -1,33 +1,33 @@
 {
   "customize": {
-    "extra_dir": "", 
+    "extra_dir": "",
     "version": "0.16.2"
-  }, 
+  },
   "deps": {
     "lib-gmp": {
-      "local": "yes", 
-      "name": "GMP library", 
+      "local": "yes",
+      "name": "GMP library",
       "tags": "lib,gmp"
     }
-  }, 
+  },
   "end_full_path": {
-    "linux": "lib/libcloog-isl.a", 
+    "linux": "lib/libcloog-isl.a",
     "mingw": "lib\\libcloog-isl.a"
-  }, 
+  },
   "only_for_host_os_tags": [
     "linux"
-  ], 
+  ],
   "only_for_target_os_tags": [
     "linux"
-  ], 
-  "process_script": "process", 
-  "soft_uoa": "7dadf96440b48611", 
-  "suggested_path": "cloog", 
+  ],
+  "process_script": "process",
+  "soft_uoa": "7dadf96440b48611",
+  "suggested_path": "cloog",
   "tags": [
-    "lib", 
-    "cloog", 
-    "v0.16.2", 
-    "v0.16", 
+    "lib",
+    "cloog",
+    "v0.16.2",
+    "v0.16",
     "v0"
   ]
 }

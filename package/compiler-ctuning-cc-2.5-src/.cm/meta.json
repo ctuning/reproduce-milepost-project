@@ -1,8 +1,8 @@
 {
   "customize": {
-    "extra_dir": "", 
+    "extra_dir": "",
     "version": "2.5.1"
-  }, 
+  },
   "deps": {
     "compiler": {
       "local": "yes",
@@ -11,35 +11,35 @@
       "tags": "compiler,lang-c,milepost"
     },
     "plugin-milepost-ctuning": {
-      "local": "yes", 
-      "name": "milepost ctuning plugins", 
-      "sort": 20, 
+      "local": "yes",
+      "name": "milepost ctuning plugins",
+      "sort": 20,
       "tags": "plugin,milepost,ctuning"
     }
   },
   "end_full_path": {
-    "linux": "bin/ctuning-cc", 
+    "linux": "bin/ctuning-cc",
     "mingw": "bin\\ctuning-cc.exe",
     "win": "bin\\ctuning-cc.exe"
-  }, 
+  },
   "only_for_host_os_tags": [
     "linux",
     "windows"
-  ], 
+  ],
   "only_for_target_os_tags": [
     "linux",
     "windows",
     "mingw"
-  ], 
-  "process_script": "process", 
-  "soft_uoa": "bfe7a4662a8e87d0", 
-  "suggested_path": "ctuning-cc", 
+  ],
+  "process_script": "process",
+  "soft_uoa": "bfe7a4662a8e87d0",
+  "suggested_path": "ctuning-cc",
   "tags": [
-    "compiler", 
-    "lang-c", 
-    "ctuning-cc", 
-    "v2.5.1", 
-    "v2.5", 
+    "compiler",
+    "lang-c",
+    "ctuning-cc",
+    "v2.5.1",
+    "v2.5",
     "v2"
   ]
 }

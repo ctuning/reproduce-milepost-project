@@ -11,17 +11,17 @@
     "tool-texinfo": {
       "local": "yes",
       "name": "texinfo",
-      "sort": 5,
       "only_for_target_os_tags": [
         "linux"
       ],
+      "sort": 5,
       "tags": "tool,texinfo,v4.13"
     }
   },
   "end_full_path": {
     "linux": "bin/gcc",
-    "win": "src\\etc\\milepost-gcc-4.4.4-bin\\bin\\gcc.exe",
-    "mingw": "src\\etc\\milepost-gcc-4.4.4-bin\\bin\\gcc.exe"
+    "mingw": "src\\etc\\milepost-gcc-4.4.4-bin\\bin\\gcc.exe",
+    "win": "src\\etc\\milepost-gcc-4.4.4-bin\\bin\\gcc.exe"
   },
   "only_for_host_os_tags": [
     "linux",

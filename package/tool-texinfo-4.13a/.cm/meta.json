@@ -1,25 +1,25 @@
 {
   "customize": {
-    "extra_dir": "", 
+    "extra_dir": "",
     "version": "4.13"
-  }, 
+  },
   "end_full_path": {
-    "linux": "bin/info", 
+    "linux": "bin/info",
     "mingw": "bin\\info"
-  }, 
+  },
   "only_for_host_os_tags": [
     "linux"
-  ], 
+  ],
   "only_for_target_os_tags": [
     "linux"
-  ], 
-  "process_script": "process", 
-  "soft_uoa": "8217f73a34c3ba52", 
-  "suggested_path": "texinfo", 
+  ],
+  "process_script": "process",
+  "soft_uoa": "8217f73a34c3ba52",
+  "suggested_path": "texinfo",
   "tags": [
-    "tool", 
-    "texinfo", 
-    "v4.13", 
+    "tool",
+    "texinfo",
+    "v4.13",
     "v4"
   ]
 }

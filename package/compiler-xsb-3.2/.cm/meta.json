@@ -1,30 +1,30 @@
 {
   "customize": {
-    "extra_dir": "3.2", 
+    "extra_dir": "3.2",
     "version": "3.2"
-  }, 
+  },
   "end_full_path": {
-    "linux": "3.2/bin/xsb", 
+    "linux": "3.2/bin/xsb",
     "mingw": "Xsb-3-2-7-Windows-Compiled\\bin\\xsb",
     "win": "Xsb-3-2-7-Windows-Compiled\\bin\\xsb"
-  }, 
+  },
   "only_for_host_os_tags": [
     "linux",
     "windows"
-  ], 
+  ],
   "only_for_target_os_tags": [
     "linux",
     "windows",
     "mingw"
-  ], 
-  "process_script": "process", 
-  "soft_uoa": "5ad48e9a7faa2dec", 
-  "suggested_path": "xsb", 
+  ],
+  "process_script": "process",
+  "soft_uoa": "5ad48e9a7faa2dec",
+  "suggested_path": "xsb",
   "tags": [
-    "compiler", 
-    "xsb", 
-    "lang-prolog", 
-    "v3.2", 
+    "compiler",
+    "xsb",
+    "lang-prolog",
+    "v3.2",
     "v3"
   ]
 }

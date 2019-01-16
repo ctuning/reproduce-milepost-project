@@ -1,32 +1,32 @@
 {
   "customize": {
-    "extra_dir": "", 
+    "extra_dir": "",
     "version": "0.10"
-  }, 
+  },
   "deps": {
     "lib-gmp": {
-      "local": "yes", 
-      "name": "GMP library", 
+      "local": "yes",
+      "name": "GMP library",
       "tags": "lib,gmp"
     }
-  }, 
+  },
   "end_full_path": {
-    "linux": "lib/libisl.a", 
+    "linux": "lib/libisl.a",
     "mingw": "lib\\libisl.a"
-  }, 
+  },
   "only_for_host_os_tags": [
     "linux"
-  ], 
+  ],
   "only_for_target_os_tags": [
     "linux"
-  ], 
-  "process_script": "process", 
-  "soft_uoa": "82dd13ca47c64729", 
-  "suggested_path": "isl", 
+  ],
+  "process_script": "process",
+  "soft_uoa": "82dd13ca47c64729",
+  "suggested_path": "isl",
   "tags": [
-    "lib", 
-    "isl", 
-    "v0.10", 
+    "lib",
+    "isl",
+    "v0.10",
     "v0"
   ]
 }

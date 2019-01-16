@@ -1,21 +1,21 @@
 {
   "customize": {
-    "extra_dir": "", 
+    "extra_dir": "",
     "version": "2.5"
-  }, 
+  },
   "only_for_host_os_tags": [
     "linux"
-  ], 
+  ],
   "only_for_target_os_tags": [
     "linux"
-  ], 
-  "process_script": "process", 
-  "soft_uoa": "24fc0bdc87f0f2f9", 
-  "suggested_path": "ccc", 
+  ],
+  "process_script": "process",
+  "soft_uoa": "24fc0bdc87f0f2f9",
+  "suggested_path": "ccc",
   "tags": [
-    "autotuning", 
-    "ccc", 
-    "v2.5", 
+    "autotuning",
+    "ccc",
+    "v2.5",
     "v2"
   ]
 }
