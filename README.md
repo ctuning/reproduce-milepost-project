@@ -81,7 +81,7 @@ Publications
 Authors of this CK workflow
 ===========================
 
-* Grigori Fursin, cTuning foundation (France)
+* Grigori Fursin, cTuning foundation
 
 
 License
