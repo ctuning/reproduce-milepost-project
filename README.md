@@ -83,12 +83,7 @@ Publications
 Authors of this CK workflow
 ===========================
 
-<<<<<<< HEAD
 * [Grigori Fursin](https://fursin.net), cTuning foundation
-=======
-* Grigori Fursin, cTuning foundation
-
->>>>>>> 65e91598ec27699d52f848b399400c3f541b02d0
 
 License
 =======
