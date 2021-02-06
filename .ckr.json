@@ -1,18 +1,19 @@
 {
-  "data_uid": "9482c22d7601b0df", 
-  "data_name": "reproduce-milepost-project", 
+  "data_alias": "reproduce-milepost-project",
+  "data_name": "reproduce-milepost-project",
+  "data_uid": "9482c22d7601b0df",
+  "data_uoa": "reproduce-milepost-project",
   "dict": {
+    "desc": "Customizable CK workflows and portable CK packages for the <a href=\"https://en.wikipedia.org/wiki/MILEPOST_GCC\">MILEPOST project</a>.",
     "repo_deps": [
       {
         "repo_uoa": "ck-crowdtuning"
       },
       {
         "repo_uoa": "ck-docker"
-      } 
-    ], 
-    "url": "https://github.com/ctuning/reproduce-milepost-project", 
-    "shared": "git"
-  }, 
-  "data_alias": "reproduce-milepost-project", 
-  "data_uoa": "reproduce-milepost-project"
+      }
+    ],
+    "shared": "git",
+    "url": "https://github.com/ctuning/reproduce-milepost-project"
+  }
 }
