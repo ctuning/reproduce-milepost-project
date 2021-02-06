@@ -33,7 +33,7 @@ Publications
 
 ```
 @article {29db2248aba45e59:a31e374796869125,
-   author = {Fursin, Grigori and Kashnikov, Yuriy and Memon, Abdul Wahid and Chamski, Zbigniew and Temam, Olivier and Namolaru, Mircea and Yom-Tov, Elad and Mendelson, Bilha and Zaks, Ayal and Courtois, Eric and Bodin, Francois and Barnard, Phil and Ashton, Elton and Bonilla, Edwin and Thomson, John and Williams, Christopher and O’Boyle, Michael F. P.},
+   author = {Fursin, Grigori and Kashnikov, Yuriy and Memon, Abdul Wahid and Chamski, Zbigniew and Temam, Olivier and Namolaru, Mircea and Yom-Tov, Elad and Mendelson, Bilha and Zaks, Ayal and Courtois, Eric and Bodin, Francois and Barnard, Phil and Ashton, Elton and Bonilla, Edwin and Thomson, John and Williams, Christopher and Oâ€™Boyle, Michael F. P.},
    affiliation = {INRIA Saclay, Parc Club Orsay Universite, 3 rue Jean Rostand, 91893 Orsay, France},
    title = {Milepost GCC: Machine Learning Enabled Self-tuning Compiler},
    journal = {International Journal of Parallel Programming},
@@ -83,7 +83,12 @@ Publications
 Authors of this CK workflow
 ===========================
 
+<<<<<<< HEAD
 * [Grigori Fursin](https://fursin.net), cTuning foundation
+=======
+* Grigori Fursin, cTuning foundation
+
+>>>>>>> 65e91598ec27699d52f848b399400c3f541b02d0
 
 License
 =======
